@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "swgen-test-automation"
+version = "0.1.0"
+description = "Generate traceable test plans, code, tests, and results from software-description PDFs."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.0",
+    "langchain-anthropic>=0.3.0",
+    "langchain-core>=0.3.0",
+    "langchain-openai>=0.2.0",
+    "pydantic>=2.9.0",
+    "pypdf>=5.0.0",
+    "pytest>=8.3.0",
+    "typer>=0.13.0",
+    "uvicorn>=0.32.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "httpx>=0.27.0",
+    "ruff>=0.8.0",
+]
+
+[project.scripts]
+swgen = "swgen_test_automation.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = [
+    "e2e: opt-in tests that call real LLM providers and run generated code",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
