@@ -32,7 +32,7 @@ Run the programmatic sample script:
 python sample_use.py
 ```
 
-The script imports the Python package directly, loads `config.toml` and `.env`, initializes SQLite, runs the v1 and v2 sample PDFs, generates tests/code/reports under `generated/`, compares v2 to v1, validates the outputs, and prints the key artifact paths. `generate()` also supports omitting `version`; in that mode it derives the project name from the PDF header unless `project_name` is supplied, reuses an existing same-hash description, or creates the next `<project>_vN` version and compares it to the prior description for that project.
+The script imports the Python package directly, loads `config.toml` and `.env`, initializes SQLite, runs the v1 and v2 sample PDFs, generates tests/code/reports under `generated/`, compares v2 to v1, validates the outputs, and prints the key artifact paths. Test plans are written as both `test_plan.json` and human-readable `test_plan.md`. `generate()` also supports omitting `version`; in that mode it derives the project name from the PDF header unless `project_name` is supplied, reuses an existing same-hash description, or creates the next `<project>_vN` version and compares it to the prior description for that project.
 
 Start the FastAPI app:
 

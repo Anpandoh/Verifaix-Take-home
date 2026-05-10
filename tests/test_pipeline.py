@@ -32,7 +32,10 @@ class FakeLLM:
             return schemas.TestPlan(
                 version=version,
                 description_version=description_version,
-                summary="Scheduler plan",
+                summary=(
+                    "Tests schedule_tasks(tasks, dependencies) for topological ordering, "
+                    "deterministic tie-breaking, and invalid dependency inputs."
+                ),
                 items=[
                     schemas.TestPlanItem(
                         id="TP_1",
@@ -125,7 +128,11 @@ temperature = 0.1
     assert generated_tests[0].test_name == "test_tp_1_callable"
     assert generated_tests[0].test_plan_item_id == "TP_1"
     assert generated_tests[0].code_path.name == "test_generated.py"
+    plan_markdown = tmp_path / "generated" / "plans" / "v1" / "test_plan.md"
+    assert plan_markdown.exists()
+    assert "schedule_tasks(tasks, dependencies)" in plan_markdown.read_text(encoding="utf-8")
     assert (report_path / "test_plan.json").exists()
+    assert (report_path / "test_plan.md").exists()
     assert (report_path / "generated_code.json").exists()
     assert (report_path / "generated_tests.json").exists()
     assert not (report_path / "prompts.json").exists()

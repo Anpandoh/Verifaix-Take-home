@@ -2,20 +2,10 @@
   "description_version": "task_scheduler_with_dependencies_v1",
   "items": [
     {
-      "description": "Verify function signature matches schedule_tasks(tasks: list[str], dependencies: list[tuple[str, str]]) -> list[str]",
+      "description": "Verify schedule_tasks returns correct ordering for linear dependency chain",
       "edge_case": false,
-      "expected_behavior": "Function accepts two parameters (tasks list and dependencies list) and returns a list of strings",
+      "expected_behavior": "Given tasks [fetch_data, clean_data, train_model, evaluate_model] with dependencies forming a chain, function returns [fetch_data, clean_data, train_model, evaluate_model]",
       "id": "TP_1",
-      "source_sections": [
-        "section_1.1"
-      ],
-      "test_type": "behavior"
-    },
-    {
-      "description": "Test basic linear dependency chain execution order",
-      "edge_case": false,
-      "expected_behavior": "Returns ['fetch_data', 'clean_data', 'train_model', 'evaluate_model'] for the provided example",
-      "id": "TP_2",
       "source_sections": [
         "section_7",
         "section_8",
@@ -24,29 +14,39 @@
       "test_type": "behavior"
     },
     {
-      "description": "Verify every task in input appears exactly once in output",
+      "description": "Verify schedule_tasks returns lexicographically sorted order when no dependencies exist",
       "edge_case": false,
-      "expected_behavior": "All tasks from input list are present in output with no duplicates",
+      "expected_behavior": "Given tasks [b, a, c] with empty dependencies, function returns [a, b, c]",
+      "id": "TP_2",
+      "source_sections": [
+        "section_1.2"
+      ],
+      "test_type": "behavior"
+    },
+    {
+      "description": "Verify schedule_tasks returns empty list for empty inputs",
+      "edge_case": false,
+      "expected_behavior": "Given empty tasks list and empty dependencies list, function returns []",
       "id": "TP_3",
       "source_sections": [
-        "section_1.2"
+        "section_1.4"
       ],
       "test_type": "behavior"
     },
     {
-      "description": "Verify dependency ordering constraint: for each (A, B) pair, A appears before B",
+      "description": "Verify schedule_tasks returns single task when only one task provided",
       "edge_case": false,
-      "expected_behavior": "All dependency pairs maintain correct ordering in output",
+      "expected_behavior": "Given tasks [task1] with no dependencies, function returns [task1]",
       "id": "TP_4",
       "source_sections": [
-        "section_1.2"
+        "section_1.4"
       ],
       "test_type": "behavior"
     },
     {
-      "description": "Test lexicographic ordering when multiple tasks are available",
+      "description": "Verify schedule_tasks respects all dependency constraints in output",
       "edge_case": false,
-      "expected_behavior": "Returns ['a', 'b', 'c'] for tasks=['b', 'a', 'c'] with empty dependencies",
+      "expected_behavior": "For every dependency pair (A, B), A appears before B in the returned list",
       "id": "TP_5",
       "source_sections": [
         "section_1.2"
@@ -54,9 +54,9 @@
       "test_type": "behavior"
     },
     {
-      "description": "Test deterministic output consistency across multiple calls",
+      "description": "Verify schedule_tasks returns deterministic output with lexicographic tie-breaking",
       "edge_case": false,
-      "expected_behavior": "Multiple calls with same input produce identical output",
+      "expected_behavior": "When multiple tasks are available for execution, the lexicographically smallest is selected first, producing consistent results across multiple calls",
       "id": "TP_6",
       "source_sections": [
         "section_1.2"
@@ -64,58 +64,10 @@
       "test_type": "behavior"
     },
     {
-      "description": "Test empty tasks and dependencies boundary condition",
-      "edge_case": true,
-      "expected_behavior": "Returns empty list []",
+      "description": "Verify schedule_tasks handles diamond-shaped dependency graph correctly",
+      "edge_case": false,
+      "expected_behavior": "Given tasks [a, b, c, d] with dependencies [(a, b), (a, c), (b, d), (c, d)], function returns [a, b, c, d] with a first and d last",
       "id": "TP_7",
-      "source_sections": [
-        "section_1.4",
-        "section_12",
-        "section_13"
-      ],
-      "test_type": "behavior"
-    },
-    {
-      "description": "Test single task with no dependencies boundary condition",
-      "edge_case": true,
-      "expected_behavior": "Returns list containing the single task",
-      "id": "TP_8",
-      "source_sections": [
-        "section_1.4",
-        "section_12",
-        "section_13"
-      ],
-      "test_type": "behavior"
-    },
-    {
-      "description": "Test multiple independent tasks with no dependencies",
-      "edge_case": true,
-      "expected_behavior": "Returns tasks in lexicographic order",
-      "id": "TP_9",
-      "source_sections": [
-        "section_1.4",
-        "section_12",
-        "section_13"
-      ],
-      "test_type": "behavior"
-    },
-    {
-      "description": "Test long linear dependency chain",
-      "edge_case": true,
-      "expected_behavior": "Returns tasks in correct dependency order",
-      "id": "TP_10",
-      "source_sections": [
-        "section_1.4",
-        "section_12",
-        "section_13"
-      ],
-      "test_type": "behavior"
-    },
-    {
-      "description": "Test diamond-shaped dependency graph",
-      "edge_case": true,
-      "expected_behavior": "Returns ['a', 'b', 'c', 'd'] where 'd' appears after both 'b' and 'c'",
-      "id": "TP_11",
       "source_sections": [
         "section_1.4",
         "section_14",
@@ -124,21 +76,65 @@
       "test_type": "behavior"
     },
     {
-      "description": "Test multiple independent dependency chains",
-      "edge_case": true,
-      "expected_behavior": "Returns deterministic ordering respecting all dependencies and lexicographic availability",
-      "id": "TP_12",
+      "description": "Verify schedule_tasks handles multiple independent dependency chains",
+      "edge_case": false,
+      "expected_behavior": "Given multiple independent chains, function returns valid ordering with lexicographic ordering applied to available tasks at each step",
+      "id": "TP_8",
       "source_sections": [
-        "section_1.4",
-        "section_12",
-        "section_13"
+        "section_1.4"
       ],
       "test_type": "behavior"
     },
     {
-      "description": "Test ValueError for duplicate task names",
+      "description": "Verify schedule_tasks includes every task exactly once in output",
       "edge_case": false,
-      "expected_behavior": "Raises ValueError when tasks list contains duplicate names",
+      "expected_behavior": "Every task in the input tasks list appears exactly once in the returned execution order",
+      "id": "TP_9",
+      "source_sections": [
+        "section_1.2"
+      ],
+      "test_type": "behavior"
+    },
+    {
+      "description": "Verify schedule_tasks raises ValueError for duplicate task names",
+      "edge_case": true,
+      "expected_behavior": "Given tasks list with duplicate names, function raises ValueError",
+      "id": "TP_10",
+      "source_sections": [
+        "section_1.3",
+        "section_10",
+        "section_11"
+      ],
+      "test_type": "behavior"
+    },
+    {
+      "description": "Verify schedule_tasks raises ValueError for dependency referencing unknown task",
+      "edge_case": true,
+      "expected_behavior": "Given dependency pair where before_task or after_task is not in tasks list, function raises ValueError",
+      "id": "TP_11",
+      "source_sections": [
+        "section_1.3",
+        "section_10",
+        "section_11"
+      ],
+      "test_type": "behavior"
+    },
+    {
+      "description": "Verify schedule_tasks raises ValueError for circular dependency",
+      "edge_case": true,
+      "expected_behavior": "Given dependencies that form a cycle (e.g., A\u2192B\u2192C\u2192A), function raises ValueError",
+      "id": "TP_12",
+      "source_sections": [
+        "section_1.3",
+        "section_10",
+        "section_11"
+      ],
+      "test_type": "behavior"
+    },
+    {
+      "description": "Verify schedule_tasks raises ValueError for self-referential dependency",
+      "edge_case": true,
+      "expected_behavior": "Given dependency pair (A, A), function raises ValueError",
       "id": "TP_13",
       "source_sections": [
         "section_1.3",
@@ -148,9 +144,9 @@
       "test_type": "behavior"
     },
     {
-      "description": "Test ValueError for dependency referring to unknown task",
-      "edge_case": false,
-      "expected_behavior": "Raises ValueError when dependency references task not in tasks list",
+      "description": "Verify schedule_tasks raises TypeError when tasks parameter is not a list",
+      "edge_case": true,
+      "expected_behavior": "Given tasks as tuple, dict, string, or other non-list type, function raises TypeError",
       "id": "TP_14",
       "source_sections": [
         "section_1.3",
@@ -160,9 +156,9 @@
       "test_type": "behavior"
     },
     {
-      "description": "Test ValueError for circular dependency",
-      "edge_case": false,
-      "expected_behavior": "Raises ValueError when circular dependency exists (e.g., A->B->A)",
+      "description": "Verify schedule_tasks raises TypeError when dependencies parameter is not a list",
+      "edge_case": true,
+      "expected_behavior": "Given dependencies as tuple, dict, string, or other non-list type, function raises TypeError",
       "id": "TP_15",
       "source_sections": [
         "section_1.3",
@@ -172,9 +168,9 @@
       "test_type": "behavior"
     },
     {
-      "description": "Test TypeError when tasks parameter is not a list",
-      "edge_case": false,
-      "expected_behavior": "Raises TypeError for non-list tasks parameter",
+      "description": "Verify schedule_tasks raises TypeError when task name is not a string",
+      "edge_case": true,
+      "expected_behavior": "Given tasks list containing non-string elements (int, None, list), function raises TypeError",
       "id": "TP_16",
       "source_sections": [
         "section_1.3",
@@ -184,9 +180,9 @@
       "test_type": "behavior"
     },
     {
-      "description": "Test TypeError when dependencies parameter is not a list",
-      "edge_case": false,
-      "expected_behavior": "Raises TypeError for non-list dependencies parameter",
+      "description": "Verify schedule_tasks raises TypeError when dependency is not a pair of strings",
+      "edge_case": true,
+      "expected_behavior": "Given dependency that is not a 2-tuple of strings (e.g., single string, 3-tuple, tuple with non-strings), function raises TypeError",
       "id": "TP_17",
       "source_sections": [
         "section_1.3",
@@ -196,95 +192,36 @@
       "test_type": "behavior"
     },
     {
-      "description": "Test TypeError when task name is not a string",
+      "description": "Verify schedule_tasks is case-sensitive for task names",
       "edge_case": false,
-      "expected_behavior": "Raises TypeError when tasks list contains non-string elements",
+      "expected_behavior": "Tasks 'Task' and 'task' are treated as distinct tasks",
       "id": "TP_18",
       "source_sections": [
-        "section_1.3",
-        "section_10",
-        "section_11"
+        "section_1.5"
       ],
       "test_type": "behavior"
     },
     {
-      "description": "Test TypeError when dependency is not a pair of strings",
+      "description": "Verify schedule_tasks does not execute tasks or modify external state",
       "edge_case": false,
-      "expected_behavior": "Raises TypeError when dependency tuple is malformed or contains non-strings",
+      "expected_behavior": "Function returns ordering only without executing tasks, touching files, or modifying global state",
       "id": "TP_19",
       "source_sections": [
-        "section_1.3",
-        "section_10",
-        "section_11"
+        "section_1.5"
       ],
       "test_type": "behavior"
     },
     {
-      "description": "Verify task names are case-sensitive",
+      "description": "Verify schedule_tasks handles long dependency chains efficiently",
       "edge_case": false,
-      "expected_behavior": "Tasks 'Task' and 'task' are treated as different tasks",
+      "expected_behavior": "Given a long linear chain of dependencies, function returns correct ordering respecting all constraints",
       "id": "TP_20",
       "source_sections": [
-        "section_1.5"
-      ],
-      "test_type": "behavior"
-    },
-    {
-      "description": "Verify function returns ordering only without executing tasks",
-      "edge_case": false,
-      "expected_behavior": "Function returns list of task names without side effects",
-      "id": "TP_21",
-      "source_sections": [
-        "section_1.5"
-      ],
-      "test_type": "behavior"
-    },
-    {
-      "description": "Test complex graph with multiple paths and convergence points",
-      "edge_case": true,
-      "expected_behavior": "Returns valid topological ordering respecting all dependencies",
-      "id": "TP_22",
-      "source_sections": [
-        "section_1.2",
         "section_1.4"
-      ],
-      "test_type": "behavior"
-    },
-    {
-      "description": "Test self-dependency error handling",
-      "edge_case": true,
-      "expected_behavior": "Raises ValueError when task has dependency on itself",
-      "id": "TP_23",
-      "source_sections": [
-        "section_1.3",
-        "section_10",
-        "section_11"
-      ],
-      "test_type": "behavior"
-    },
-    {
-      "description": "Test empty dependencies list with multiple tasks",
-      "edge_case": false,
-      "expected_behavior": "Returns tasks in lexicographic order",
-      "id": "TP_24",
-      "source_sections": [
-        "section_1.4",
-        "section_12",
-        "section_13"
-      ],
-      "test_type": "behavior"
-    },
-    {
-      "description": "Test large number of tasks and dependencies for performance",
-      "edge_case": true,
-      "expected_behavior": "Completes in reasonable time with O((N + E) log N) complexity",
-      "id": "TP_25",
-      "source_sections": [
-        "section_1.5"
       ],
       "test_type": "behavior"
     }
   ],
-  "summary": "Comprehensive test plan for task scheduler module covering API shape, normal behavior, edge cases, error handling, and boundary conditions.",
+  "summary": "The schedule_tasks(tasks: list[str], dependencies: list[tuple[str, str]]) function computes a valid topological ordering of tasks respecting all dependency constraints. It returns a list[str] containing each task exactly once, ordered such that for every dependency pair (A, B), A appears before B, with ties broken lexicographically. The function must reject invalid inputs (non-list types, non-string task names, unknown task references, circular dependencies) with appropriate TypeError or ValueError exceptions, and handle boundary cases including empty inputs, single tasks, and complex dependency graphs like diamond patterns.",
   "version": "task_scheduler_with_dependencies_v1"
 }

@@ -75,6 +75,7 @@ def output_locations(reports_dir: Path, generated_dir: Path, versions: list[str]
     print("\n=== Key Outputs ===")
     for version in versions:
         print(f"{version} plan: {generated_dir / 'plans' / version / 'test_plan.json'}")
+        print(f"{version} plan markdown: {generated_dir / 'plans' / version / 'test_plan.md'}")
         print(f"{version} code: {generated_dir / 'code' / version}")
         print(f"{version} tests: {generated_dir / 'tests' / version / 'test_generated.py'}")
         print(f"{version} results: {generated_dir / 'results' / version / 'execution_results.json'}")

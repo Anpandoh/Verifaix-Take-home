@@ -8,6 +8,10 @@ Requirements:
 - Each item must include source section IDs from the description.
 - Cover public API shape, normal behavior, edge cases, errors, assumptions, and constraints.
 - Keep item descriptions concise and independently testable.
+- Write the "summary" as 2-4 concrete sentences specific to this module.
+- In the summary, name the public API, its inputs and output, the core success behavior, ordering or
+  determinism rules, and the main invalid-input/error cases.
+- Do not use generic phrases like "comprehensive test plan" unless followed by concrete module behavior.
 
 Description sections:
 {sections}

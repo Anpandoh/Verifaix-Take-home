@@ -1,29 +1,29 @@
 [
   {
-    "created_at": "2026-05-10 23:32:50.141181",
-    "duration_seconds": 0.6231430829502642,
+    "created_at": "2026-05-10 23:45:49.044212",
+    "duration_seconds": 0.6435389160178602,
     "failure_message": null,
     "status": "passed",
-    "test_name": "test_function_signature",
+    "test_name": "test_linear_dependency_chain",
     "test_plan_item_ids": [
       "TP_1"
     ],
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:32:50.615627",
-    "duration_seconds": 0.4743263330310583,
+    "created_at": "2026-05-10 23:45:49.681849",
+    "duration_seconds": 0.6375464999582618,
     "failure_message": null,
     "status": "passed",
-    "test_name": "test_linear_dependency_chain_example",
+    "test_name": "test_lexicographic_ordering_no_dependencies",
     "test_plan_item_ids": [
       "TP_2"
     ],
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:32:51.088972",
-    "duration_seconds": 0.4732222920283675,
+    "created_at": "2026-05-10 23:45:50.165249",
+    "duration_seconds": 0.4832782498560846,
     "failure_message": null,
     "status": "passed",
     "test_name": "test_all_tasks_appear_exactly_once",
@@ -33,8 +33,8 @@
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:32:51.674640",
-    "duration_seconds": 0.5855458751320839,
+    "created_at": "2026-05-10 23:45:50.632013",
+    "duration_seconds": 0.4666707089636475,
     "failure_message": null,
     "status": "passed",
     "test_name": "test_dependency_ordering_constraint",
@@ -44,222 +44,178 @@
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:32:52.130534",
-    "duration_seconds": 0.45578450011089444,
+    "created_at": "2026-05-10 23:45:51.098608",
+    "duration_seconds": 0.4664847501553595,
     "failure_message": null,
     "status": "passed",
-    "test_name": "test_lexicographic_largest_first",
+    "test_name": "test_deterministic_output",
     "test_plan_item_ids": [
       "TP_5"
     ],
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:32:52.576870",
-    "duration_seconds": 0.44621316716074944,
+    "created_at": "2026-05-10 23:45:51.681775",
+    "duration_seconds": 0.5830827918834984,
     "failure_message": null,
     "status": "passed",
-    "test_name": "test_deterministic_output",
+    "test_name": "test_diamond_dependency_graph",
     "test_plan_item_ids": [
       "TP_6"
     ],
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:32:53.049095",
-    "duration_seconds": 0.47211287496611476,
+    "created_at": "2026-05-10 23:45:52.169643",
+    "duration_seconds": 0.487765499856323,
     "failure_message": null,
     "status": "passed",
-    "test_name": "test_empty_tasks_and_dependencies",
+    "test_name": "test_multiple_independent_chains",
     "test_plan_item_ids": [
       "TP_7"
     ],
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:32:53.532832",
-    "duration_seconds": 0.4836291659157723,
+    "created_at": "2026-05-10 23:45:52.831461",
+    "duration_seconds": 0.6615819169674069,
     "failure_message": null,
     "status": "passed",
-    "test_name": "test_single_task_no_dependencies",
+    "test_name": "test_empty_input",
     "test_plan_item_ids": [
       "TP_8"
     ],
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:32:54.017943",
-    "duration_seconds": 0.48499887506477535,
+    "created_at": "2026-05-10 23:45:53.328927",
+    "duration_seconds": 0.4973071659915149,
     "failure_message": null,
     "status": "passed",
-    "test_name": "test_multiple_independent_tasks_lexicographic",
+    "test_name": "test_single_task_no_dependencies",
     "test_plan_item_ids": [
       "TP_9"
     ],
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:32:54.488316",
-    "duration_seconds": 0.47026195796206594,
+    "created_at": "2026-05-10 23:45:53.843286",
+    "duration_seconds": 0.5142676669638604,
     "failure_message": null,
     "status": "passed",
-    "test_name": "test_long_linear_dependency_chain",
+    "test_name": "test_long_dependency_chain",
     "test_plan_item_ids": [
       "TP_10"
     ],
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:32:54.972476",
-    "duration_seconds": 0.48398708389140666,
+    "created_at": "2026-05-10 23:45:54.321488",
+    "duration_seconds": 0.4780801248271018,
     "failure_message": null,
     "status": "passed",
-    "test_name": "test_multiple_independent_chains",
+    "test_name": "test_duplicate_task_names_raises_valueerror",
     "test_plan_item_ids": [
       "TP_11"
     ],
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:32:55.479158",
-    "duration_seconds": 0.5065189590677619,
-    "failure_message": "F                                                                        [100%]\n=================================== FAILURES ===================================\n_____________________ test_diamond_shaped_dependency_graph _____________________\ngenerated/tests/task_scheduler_with_dependencies_v2/test_generated.py:123: in test_diamond_shaped_dependency_graph\n    assert result == ['a', 'b', 'c', 'd']\nE   AssertionError: assert ['a', 'c', 'b', 'd'] == ['a', 'b', 'c', 'd']\nE     \nE     At index 1 diff: 'c' != 'b'\nE     Use -v to get more diff\n=========================== short test summary info ============================\nFAILED generated/tests/task_scheduler_with_dependencies_v2/test_generated.py::test_diamond_shaped_dependency_graph\n1 failed in 0.04s",
-    "status": "failed",
-    "test_name": "test_diamond_shaped_dependency_graph",
+    "created_at": "2026-05-10 23:45:54.810579",
+    "duration_seconds": 0.4890008750371635,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_unknown_task_in_dependency_raises_valueerror",
     "test_plan_item_ids": [
       "TP_12"
     ],
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:32:55.955767",
-    "duration_seconds": 0.47649904200807214,
+    "created_at": "2026-05-10 23:45:55.291724",
+    "duration_seconds": 0.48105837497860193,
     "failure_message": null,
     "status": "passed",
-    "test_name": "test_duplicate_task_names_raises_error",
+    "test_name": "test_circular_dependency_raises_valueerror",
     "test_plan_item_ids": [
       "TP_13"
     ],
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:32:56.445530",
-    "duration_seconds": 0.48964362498372793,
+    "created_at": "2026-05-10 23:45:55.759652",
+    "duration_seconds": 0.46783974999561906,
     "failure_message": null,
     "status": "passed",
-    "test_name": "test_unknown_task_in_dependency_raises_error",
+    "test_name": "test_tasks_not_list_raises_typeerror",
     "test_plan_item_ids": [
       "TP_14"
     ],
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:32:56.947904",
-    "duration_seconds": 0.5021772079635412,
+    "created_at": "2026-05-10 23:45:56.230233",
+    "duration_seconds": 0.4704942919779569,
     "failure_message": null,
     "status": "passed",
-    "test_name": "test_circular_dependency_raises_error",
+    "test_name": "test_dependencies_not_list_raises_typeerror",
     "test_plan_item_ids": [
       "TP_15"
     ],
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:32:57.417718",
-    "duration_seconds": 0.46968233305960894,
+    "created_at": "2026-05-10 23:45:56.700726",
+    "duration_seconds": 0.4704121248796582,
     "failure_message": null,
     "status": "passed",
-    "test_name": "test_tasks_not_list_raises_error",
+    "test_name": "test_task_name_not_string_raises_typeerror",
     "test_plan_item_ids": [
       "TP_16"
     ],
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:32:57.846595",
-    "duration_seconds": 0.4287651248741895,
+    "created_at": "2026-05-10 23:45:57.159756",
+    "duration_seconds": 0.4589194159489125,
     "failure_message": null,
     "status": "passed",
-    "test_name": "test_dependencies_not_list_raises_error",
+    "test_name": "test_dependency_not_pair_of_strings_raises_typeerror",
     "test_plan_item_ids": [
       "TP_17"
     ],
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:32:58.293185",
-    "duration_seconds": 0.4464755419176072,
+    "created_at": "2026-05-10 23:45:57.605350",
+    "duration_seconds": 0.44549016607925296,
     "failure_message": null,
     "status": "passed",
-    "test_name": "test_task_name_not_string_raises_error",
+    "test_name": "test_case_sensitive_task_names",
     "test_plan_item_ids": [
       "TP_18"
     ],
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:32:58.750707",
-    "duration_seconds": 0.457413415890187,
+    "created_at": "2026-05-10 23:45:58.079606",
+    "duration_seconds": 0.4741610838100314,
     "failure_message": null,
     "status": "passed",
-    "test_name": "test_dependency_not_pair_of_strings_raises_error",
+    "test_name": "test_no_side_effects",
     "test_plan_item_ids": [
       "TP_19"
     ],
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:32:59.209085",
-    "duration_seconds": 0.4582704589702189,
+    "created_at": "2026-05-10 23:45:58.567930",
+    "duration_seconds": 0.4882339171599597,
     "failure_message": null,
     "status": "passed",
-    "test_name": "test_case_sensitive_task_names",
+    "test_name": "test_self_referential_dependency_raises_valueerror",
     "test_plan_item_ids": [
       "TP_20"
-    ],
-    "version": "task_scheduler_with_dependencies_v2"
-  },
-  {
-    "created_at": "2026-05-10 23:32:59.671262",
-    "duration_seconds": 0.4620729589369148,
-    "failure_message": null,
-    "status": "passed",
-    "test_name": "test_function_returns_ordering_only",
-    "test_plan_item_ids": [
-      "TP_21"
-    ],
-    "version": "task_scheduler_with_dependencies_v2"
-  },
-  {
-    "created_at": "2026-05-10 23:33:00.160394",
-    "duration_seconds": 0.4890055418945849,
-    "failure_message": null,
-    "status": "passed",
-    "test_name": "test_performance_large_task_count",
-    "test_plan_item_ids": [
-      "TP_22"
-    ],
-    "version": "task_scheduler_with_dependencies_v2"
-  },
-  {
-    "created_at": "2026-05-10 23:33:00.629955",
-    "duration_seconds": 0.46946320799179375,
-    "failure_message": null,
-    "status": "passed",
-    "test_name": "test_self_referential_dependency_raises_error",
-    "test_plan_item_ids": [
-      "TP_23"
-    ],
-    "version": "task_scheduler_with_dependencies_v2"
-  },
-  {
-    "created_at": "2026-05-10 23:33:01.052615",
-    "duration_seconds": 0.422558750025928,
-    "failure_message": null,
-    "status": "passed",
-    "test_name": "test_complex_diamond_multiple_convergence",
-    "test_plan_item_ids": [
-      "TP_24"
     ],
     "version": "task_scheduler_with_dependencies_v2"
   }

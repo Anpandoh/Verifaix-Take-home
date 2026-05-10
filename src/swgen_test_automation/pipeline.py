@@ -58,6 +58,7 @@ def generate(
     if version is None and existing_description is not None:
         existing_plan = repo.get_test_plan(resolved_version)
         if existing_plan is not None:
+            _write_test_plan_artifacts(repo, settings.app.generated_dir, existing_plan)
             return existing_plan
 
     description = DescriptionVersion(
@@ -84,14 +85,7 @@ def generate(
         update={"version": resolved_version, "description_version": description.version}
     )
     repo.save_test_plan(test_plan)
-    _save_text_artifact(
-        repo,
-        resolved_version,
-        "test_plan",
-        "test_plan.json",
-        settings.app.generated_dir / "plans" / resolved_version / "test_plan.json",
-        dumps_json(test_plan.model_dump()),
-    )
+    _write_test_plan_artifacts(repo, settings.app.generated_dir, test_plan)
 
     generated_module, _ = generators.create_module(resolved_version, sections, test_plan)
     generated_module = generated_module.model_copy(update={"version": resolved_version})
@@ -219,6 +213,7 @@ def export_report(
     plan = repo.get_test_plan(version)
     if plan is not None:
         write_text(target / "test_plan.json", dumps_json(plan.model_dump()))
+        write_text(target / "test_plan.md", render_test_plan_markdown(plan))
 
     deltas = repo.get_deltas(version)
     if deltas is not None:
@@ -263,6 +258,68 @@ def validate(
 def init_database(config_path: Path | str = "config.toml") -> None:
     settings = load_settings(config_path)
     Repository(settings.app.database_path).init_db()
+
+
+def render_test_plan_markdown(plan: TestPlan) -> str:
+    lines = [
+        f"# Test Plan: {plan.version}",
+        "",
+        f"- Description version: `{plan.description_version}`",
+        f"- Test plan items: {len(plan.items)}",
+    ]
+    if plan.summary:
+        lines.extend(["", "## Summary", "", plan.summary])
+
+    lines.extend(
+        [
+            "",
+            "## Test Items",
+            "",
+            "| ID | Type | Edge Case | Source Sections | Description | Expected Behavior |",
+            "|---|---|---:|---|---|---|",
+        ]
+    )
+    for item in plan.items:
+        lines.append(
+            "| "
+            + " | ".join(
+                [
+                    f"`{item.id}`",
+                    _escape_markdown_cell(item.test_type),
+                    "yes" if item.edge_case else "no",
+                    ", ".join(f"`{section}`" for section in item.source_sections),
+                    _escape_markdown_cell(item.description),
+                    _escape_markdown_cell(item.expected_behavior),
+                ]
+            )
+            + " |"
+        )
+    lines.append("")
+    return "\n".join(lines)
+
+
+def _write_test_plan_artifacts(repo: Repository, generated_dir: Path, plan: TestPlan) -> None:
+    plan_dir = generated_dir / "plans" / plan.version
+    _save_text_artifact(
+        repo,
+        plan.version,
+        "test_plan",
+        "test_plan.json",
+        plan_dir / "test_plan.json",
+        dumps_json(plan.model_dump()),
+    )
+    _save_text_artifact(
+        repo,
+        plan.version,
+        "test_plan",
+        "test_plan.md",
+        plan_dir / "test_plan.md",
+        render_test_plan_markdown(plan),
+    )
+
+
+def _escape_markdown_cell(value: str) -> str:
+    return value.replace("|", "\\|").replace("\n", " ")
 
 
 def _write_module_artifact(

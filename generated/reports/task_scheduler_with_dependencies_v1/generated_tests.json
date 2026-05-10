@@ -1,177 +1,142 @@
 [
   {
     "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
-    "created_at": "2026-05-10 23:31:59.156568",
-    "test_name": "test_all_tasks_appear_exactly_once",
-    "test_plan_item_id": "TP_3",
-    "version": "task_scheduler_with_dependencies_v1"
-  },
-  {
-    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
-    "created_at": "2026-05-10 23:31:59.156565",
-    "test_name": "test_basic_linear_dependency_chain",
-    "test_plan_item_id": "TP_2",
-    "version": "task_scheduler_with_dependencies_v1"
-  },
-  {
-    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
-    "created_at": "2026-05-10 23:31:59.156610",
+    "created_at": "2026-05-10 23:45:00.865652",
     "test_name": "test_case_sensitive_task_names",
-    "test_plan_item_id": "TP_20",
-    "version": "task_scheduler_with_dependencies_v1"
-  },
-  {
-    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
-    "created_at": "2026-05-10 23:31:59.156599",
-    "test_name": "test_circular_dependency_error",
-    "test_plan_item_id": "TP_15",
-    "version": "task_scheduler_with_dependencies_v1"
-  },
-  {
-    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
-    "created_at": "2026-05-10 23:31:59.156614",
-    "test_name": "test_complex_graph_multiple_paths",
-    "test_plan_item_id": "TP_22",
-    "version": "task_scheduler_with_dependencies_v1"
-  },
-  {
-    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
-    "created_at": "2026-05-10 23:31:59.156603",
-    "test_name": "test_dependencies_not_list_error",
-    "test_plan_item_id": "TP_17",
-    "version": "task_scheduler_with_dependencies_v1"
-  },
-  {
-    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
-    "created_at": "2026-05-10 23:31:59.156608",
-    "test_name": "test_dependency_not_pair_of_strings_error",
-    "test_plan_item_id": "TP_19",
-    "version": "task_scheduler_with_dependencies_v1"
-  },
-  {
-    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
-    "created_at": "2026-05-10 23:31:59.156570",
-    "test_name": "test_dependency_ordering_constraint",
-    "test_plan_item_id": "TP_4",
-    "version": "task_scheduler_with_dependencies_v1"
-  },
-  {
-    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
-    "created_at": "2026-05-10 23:31:59.156579",
-    "test_name": "test_deterministic_output_consistency",
-    "test_plan_item_id": "TP_6",
-    "version": "task_scheduler_with_dependencies_v1"
-  },
-  {
-    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
-    "created_at": "2026-05-10 23:31:59.156590",
-    "test_name": "test_diamond_shaped_dependency_graph",
-    "test_plan_item_id": "TP_11",
-    "version": "task_scheduler_with_dependencies_v1"
-  },
-  {
-    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
-    "created_at": "2026-05-10 23:31:59.156594",
-    "test_name": "test_duplicate_task_names_error",
-    "test_plan_item_id": "TP_13",
-    "version": "task_scheduler_with_dependencies_v1"
-  },
-  {
-    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
-    "created_at": "2026-05-10 23:31:59.156631",
-    "test_name": "test_empty_dependencies_multiple_tasks",
-    "test_plan_item_id": "TP_24",
-    "version": "task_scheduler_with_dependencies_v1"
-  },
-  {
-    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
-    "created_at": "2026-05-10 23:31:59.156581",
-    "test_name": "test_empty_tasks_and_dependencies",
-    "test_plan_item_id": "TP_7",
-    "version": "task_scheduler_with_dependencies_v1"
-  },
-  {
-    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
-    "created_at": "2026-05-10 23:31:59.156612",
-    "test_name": "test_function_returns_ordering_only",
-    "test_plan_item_id": "TP_21",
-    "version": "task_scheduler_with_dependencies_v1"
-  },
-  {
-    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
-    "created_at": "2026-05-10 23:31:59.156519",
-    "test_name": "test_function_signature",
-    "test_plan_item_id": "TP_1",
-    "version": "task_scheduler_with_dependencies_v1"
-  },
-  {
-    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
-    "created_at": "2026-05-10 23:31:59.156633",
-    "test_name": "test_large_number_of_tasks_performance",
-    "test_plan_item_id": "TP_25",
-    "version": "task_scheduler_with_dependencies_v1"
-  },
-  {
-    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
-    "created_at": "2026-05-10 23:31:59.156576",
-    "test_name": "test_lexicographic_ordering_no_dependencies",
-    "test_plan_item_id": "TP_5",
-    "version": "task_scheduler_with_dependencies_v1"
-  },
-  {
-    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
-    "created_at": "2026-05-10 23:31:59.156588",
-    "test_name": "test_long_linear_dependency_chain",
-    "test_plan_item_id": "TP_10",
-    "version": "task_scheduler_with_dependencies_v1"
-  },
-  {
-    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
-    "created_at": "2026-05-10 23:31:59.156592",
-    "test_name": "test_multiple_independent_chains",
-    "test_plan_item_id": "TP_12",
-    "version": "task_scheduler_with_dependencies_v1"
-  },
-  {
-    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
-    "created_at": "2026-05-10 23:31:59.156586",
-    "test_name": "test_multiple_independent_tasks",
-    "test_plan_item_id": "TP_9",
-    "version": "task_scheduler_with_dependencies_v1"
-  },
-  {
-    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
-    "created_at": "2026-05-10 23:31:59.156628",
-    "test_name": "test_self_dependency_error",
-    "test_plan_item_id": "TP_23",
-    "version": "task_scheduler_with_dependencies_v1"
-  },
-  {
-    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
-    "created_at": "2026-05-10 23:31:59.156583",
-    "test_name": "test_single_task_no_dependencies",
-    "test_plan_item_id": "TP_8",
-    "version": "task_scheduler_with_dependencies_v1"
-  },
-  {
-    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
-    "created_at": "2026-05-10 23:31:59.156605",
-    "test_name": "test_task_name_not_string_error",
     "test_plan_item_id": "TP_18",
     "version": "task_scheduler_with_dependencies_v1"
   },
   {
     "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
-    "created_at": "2026-05-10 23:31:59.156601",
-    "test_name": "test_tasks_not_list_error",
+    "created_at": "2026-05-10 23:45:00.865639",
+    "test_name": "test_circular_dependency_raises_valueerror",
+    "test_plan_item_id": "TP_12",
+    "version": "task_scheduler_with_dependencies_v1"
+  },
+  {
+    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
+    "created_at": "2026-05-10 23:45:00.865646",
+    "test_name": "test_dependencies_not_list_raises_typeerror",
+    "test_plan_item_id": "TP_15",
+    "version": "task_scheduler_with_dependencies_v1"
+  },
+  {
+    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
+    "created_at": "2026-05-10 23:45:00.865623",
+    "test_name": "test_dependency_constraints_respected",
+    "test_plan_item_id": "TP_5",
+    "version": "task_scheduler_with_dependencies_v1"
+  },
+  {
+    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
+    "created_at": "2026-05-10 23:45:00.865626",
+    "test_name": "test_deterministic_lexicographic_tiebreaking",
+    "test_plan_item_id": "TP_6",
+    "version": "task_scheduler_with_dependencies_v1"
+  },
+  {
+    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
+    "created_at": "2026-05-10 23:45:00.865628",
+    "test_name": "test_diamond_dependency_graph",
+    "test_plan_item_id": "TP_7",
+    "version": "task_scheduler_with_dependencies_v1"
+  },
+  {
+    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
+    "created_at": "2026-05-10 23:45:00.865635",
+    "test_name": "test_duplicate_task_names_raises_valueerror",
+    "test_plan_item_id": "TP_10",
+    "version": "task_scheduler_with_dependencies_v1"
+  },
+  {
+    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
+    "created_at": "2026-05-10 23:45:00.865617",
+    "test_name": "test_empty_inputs",
+    "test_plan_item_id": "TP_3",
+    "version": "task_scheduler_with_dependencies_v1"
+  },
+  {
+    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
+    "created_at": "2026-05-10 23:45:00.865633",
+    "test_name": "test_every_task_appears_exactly_once",
+    "test_plan_item_id": "TP_9",
+    "version": "task_scheduler_with_dependencies_v1"
+  },
+  {
+    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
+    "created_at": "2026-05-10 23:45:00.865650",
+    "test_name": "test_invalid_dependency_format_raises_typeerror",
+    "test_plan_item_id": "TP_17",
+    "version": "task_scheduler_with_dependencies_v1"
+  },
+  {
+    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
+    "created_at": "2026-05-10 23:45:00.865613",
+    "test_name": "test_lexicographic_order_no_dependencies",
+    "test_plan_item_id": "TP_2",
+    "version": "task_scheduler_with_dependencies_v1"
+  },
+  {
+    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
+    "created_at": "2026-05-10 23:45:00.865558",
+    "test_name": "test_linear_dependency_chain",
+    "test_plan_item_id": "TP_1",
+    "version": "task_scheduler_with_dependencies_v1"
+  },
+  {
+    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
+    "created_at": "2026-05-10 23:45:00.865657",
+    "test_name": "test_long_dependency_chain",
+    "test_plan_item_id": "TP_20",
+    "version": "task_scheduler_with_dependencies_v1"
+  },
+  {
+    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
+    "created_at": "2026-05-10 23:45:00.865630",
+    "test_name": "test_multiple_independent_chains",
+    "test_plan_item_id": "TP_8",
+    "version": "task_scheduler_with_dependencies_v1"
+  },
+  {
+    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
+    "created_at": "2026-05-10 23:45:00.865655",
+    "test_name": "test_no_external_state_modification",
+    "test_plan_item_id": "TP_19",
+    "version": "task_scheduler_with_dependencies_v1"
+  },
+  {
+    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
+    "created_at": "2026-05-10 23:45:00.865648",
+    "test_name": "test_non_string_task_name_raises_typeerror",
     "test_plan_item_id": "TP_16",
     "version": "task_scheduler_with_dependencies_v1"
   },
   {
     "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
-    "created_at": "2026-05-10 23:31:59.156597",
-    "test_name": "test_unknown_task_in_dependency_error",
+    "created_at": "2026-05-10 23:45:00.865641",
+    "test_name": "test_self_referential_dependency_raises_valueerror",
+    "test_plan_item_id": "TP_13",
+    "version": "task_scheduler_with_dependencies_v1"
+  },
+  {
+    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
+    "created_at": "2026-05-10 23:45:00.865619",
+    "test_name": "test_single_task",
+    "test_plan_item_id": "TP_4",
+    "version": "task_scheduler_with_dependencies_v1"
+  },
+  {
+    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
+    "created_at": "2026-05-10 23:45:00.865643",
+    "test_name": "test_tasks_not_list_raises_typeerror",
     "test_plan_item_id": "TP_14",
+    "version": "task_scheduler_with_dependencies_v1"
+  },
+  {
+    "code_path": "generated/tests/task_scheduler_with_dependencies_v1/test_generated.py",
+    "created_at": "2026-05-10 23:45:00.865637",
+    "test_name": "test_unknown_task_in_dependency_raises_valueerror",
+    "test_plan_item_id": "TP_11",
     "version": "task_scheduler_with_dependencies_v1"
   }
 ]
