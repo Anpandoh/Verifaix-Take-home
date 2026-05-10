@@ -3,12 +3,13 @@ from __future__ import annotations
 from fastapi import Depends, FastAPI, HTTPException
 
 from .config import load_settings
-from .database import Repository
+from .db import Repository
 from .schemas import (
-    ArtifactRecord,
     DescriptionVersion,
     ExecutionResult,
     GenerateRunRequest,
+    GeneratedCodeRecord,
+    GeneratedTestRecord,
     TestPlan,
     TestPlanDelta,
     TestPlanItem,
@@ -70,14 +71,14 @@ def get_deltas(new_version: str, repo: Repository = Depends(get_repo)) -> TestPl
     return deltas
 
 
-@app.get("/generated-code/{version}", response_model=list[ArtifactRecord])
-def get_generated_code(version: str, repo: Repository = Depends(get_repo)) -> list[ArtifactRecord]:
-    return repo.get_artifacts(version, "generated_code")
+@app.get("/generated-code/{version}", response_model=list[GeneratedCodeRecord])
+def get_generated_code(version: str, repo: Repository = Depends(get_repo)) -> list[GeneratedCodeRecord]:
+    return repo.get_generated_code(version)
 
 
-@app.get("/generated-tests/{version}", response_model=list[ArtifactRecord])
-def get_generated_tests(version: str, repo: Repository = Depends(get_repo)) -> list[ArtifactRecord]:
-    return repo.get_artifacts(version, "generated_tests")
+@app.get("/generated-tests/{version}", response_model=list[GeneratedTestRecord])
+def get_generated_tests(version: str, repo: Repository = Depends(get_repo)) -> list[GeneratedTestRecord]:
+    return repo.get_generated_tests(version)
 
 
 @app.get("/execution-results/{version}", response_model=list[ExecutionResult])
@@ -92,7 +93,13 @@ def get_execution_results(
 def generate_run(request: GenerateRunRequest) -> TestPlan:
     from .pipeline import generate
 
-    return generate(request.pdf_path, request.version, request.compare_to, request.config_path)
+    return generate(
+        request.pdf_path,
+        request.version,
+        request.compare_to,
+        request.config_path,
+        request.project_name,
+    )
 
 
 @app.post("/runs/test", response_model=list[ExecutionResult])

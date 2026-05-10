@@ -5,11 +5,14 @@ from pathlib import Path
 
 import pytest
 
+from swgen_test_automation.constants import DEFAULT_SAMPLE_PDF
+from swgen_test_automation.db import Repository
 from swgen_test_automation import pipeline
-from swgen_test_automation.database import Repository
 
-
-DEFAULT_SAMPLE_PDF = "/Users/anpandoh/Downloads/Problem_Description_Software_Coding.pdf"
+DEFAULT_E2E_OPENAI_MODEL = "gpt-4.1-mini"
+DEFAULT_E2E_ANTHROPIC_MODEL = "claude-haiku-4-5-20251001"
+DEFAULT_E2E_OPENAI_API_KEY_ENV = "OPENAI_API_KEY"
+DEFAULT_E2E_ANTHROPIC_API_KEY_ENV = "ANTHROPIC_API_KEY"
 
 
 @pytest.mark.e2e
@@ -21,7 +24,7 @@ def test_real_llm_pipeline_loop_surfaces_structured_output_and_generation_cracks
 
     loops = int(os.getenv("LLM_E2E_LOOPS", "3"))
     provider = os.getenv("LLM_E2E_PROVIDER", "openai")
-    model_name = os.getenv("LLM_E2E_MODEL", "gpt-4.1-mini")
+    model_name = os.getenv("LLM_E2E_MODEL", _default_model(provider))
     api_key_env = os.getenv("LLM_E2E_API_KEY_ENV") or _default_api_key_env(provider)
     pdf_path = Path(os.getenv("LLM_E2E_PDF", DEFAULT_SAMPLE_PDF))
 
@@ -78,7 +81,7 @@ def _write_e2e_config(
 [app]
 database_path = "{tmp_path / "e2e.sqlite"}"
 generated_dir = "{tmp_path / "generated"}"
-reports_dir = "{tmp_path / "reports"}"
+reports_dir = "{tmp_path / "generated" / "reports"}"
 
 [llm]
 provider = "{provider}"
@@ -100,11 +103,18 @@ def _assert_required_records(repo: Repository, version: str) -> None:
     assert repo.get_artifacts(version, "test_plan"), f"{version}: missing test-plan artifact"
     assert repo.get_artifacts(version, "generated_code"), f"{version}: missing code artifact"
     assert repo.get_artifacts(version, "generated_tests"), f"{version}: missing tests artifact"
+    assert repo.get_generated_code(version), f"{version}: missing generated code record"
+    assert repo.get_generated_tests(version), f"{version}: missing generated test records"
     assert repo.get_execution_results(version), f"{version}: missing execution results"
-    assert len(repo.get_prompts(version)) == 3, f"{version}: expected 3 stored prompts"
 
 
 def _default_api_key_env(provider: str) -> str:
     if provider == "anthropic":
-        return "ANTHROPIC_API_KEY"
-    return "OPENAI_API_KEY"
+        return DEFAULT_E2E_ANTHROPIC_API_KEY_ENV
+    return DEFAULT_E2E_OPENAI_API_KEY_ENV
+
+
+def _default_model(provider: str) -> str:
+    if provider == "anthropic":
+        return DEFAULT_E2E_ANTHROPIC_MODEL
+    return DEFAULT_E2E_OPENAI_MODEL

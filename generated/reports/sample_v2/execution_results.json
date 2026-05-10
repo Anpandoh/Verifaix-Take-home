@@ -1,0 +1,772 @@
+[
+  {
+    "created_at": "2026-05-09 17:33:51.370759",
+    "duration_seconds": 0.9656579580623657,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_function_signature_and_return_type",
+    "test_plan_item_ids": [
+      "TP_1"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:33:52.043836",
+    "duration_seconds": 0.67275599995628,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_simple_linear_dependency_chain",
+    "test_plan_item_ids": [
+      "TP_2"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:33:52.659551",
+    "duration_seconds": 0.6156170419417322,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_every_task_appears_exactly_once",
+    "test_plan_item_ids": [
+      "TP_3"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:33:53.287022",
+    "duration_seconds": 0.6273898340296,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_dependency_ordering_constraint",
+    "test_plan_item_ids": [
+      "TP_4"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:33:53.927096",
+    "duration_seconds": 0.6399781669024378,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_lexicographic_ordering_no_dependencies",
+    "test_plan_item_ids": [
+      "TP_5"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:33:54.723040",
+    "duration_seconds": 0.795842541847378,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_deterministic_output",
+    "test_plan_item_ids": [
+      "TP_6"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:33:55.380810",
+    "duration_seconds": 0.6576666249893606,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_duplicate_task_names_raises_valueerror",
+    "test_plan_item_ids": [
+      "TP_7"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:33:55.990736",
+    "duration_seconds": 0.6098383329808712,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_unknown_task_in_dependency_raises_valueerror",
+    "test_plan_item_ids": [
+      "TP_8"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:33:56.572355",
+    "duration_seconds": 0.5814909997861832,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_circular_dependency_raises_valueerror",
+    "test_plan_item_ids": [
+      "TP_9"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:33:57.243794",
+    "duration_seconds": 0.6713374578393996,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_tasks_not_list_raises_typeerror",
+    "test_plan_item_ids": [
+      "TP_10"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:33:57.886604",
+    "duration_seconds": 0.6427175831049681,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_dependencies_not_list_raises_typeerror",
+    "test_plan_item_ids": [
+      "TP_11"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:33:58.534993",
+    "duration_seconds": 0.6482813749462366,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_task_name_not_string_raises_typeerror",
+    "test_plan_item_ids": [
+      "TP_12"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:33:59.327822",
+    "duration_seconds": 0.792724542086944,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_dependency_not_pair_of_strings_raises_typeerror",
+    "test_plan_item_ids": [
+      "TP_13"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:33:59.912009",
+    "duration_seconds": 0.5840951248537749,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_empty_input_returns_empty_output",
+    "test_plan_item_ids": [
+      "TP_14"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:34:00.528677",
+    "duration_seconds": 0.6165709579363465,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_single_task_no_dependencies",
+    "test_plan_item_ids": [
+      "TP_15"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:34:01.143199",
+    "duration_seconds": 0.6144141668919474,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_multiple_independent_tasks_lexicographic_order",
+    "test_plan_item_ids": [
+      "TP_16"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:34:01.711990",
+    "duration_seconds": 0.5686758749652654,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_long_dependency_chain",
+    "test_plan_item_ids": [
+      "TP_17"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:34:02.302111",
+    "duration_seconds": 0.5900230840779841,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_multiple_independent_chains",
+    "test_plan_item_ids": [
+      "TP_18"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:34:02.873954",
+    "duration_seconds": 0.5717518751043826,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_diamond_shaped_dependency_graph",
+    "test_plan_item_ids": [
+      "TP_19"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:34:03.463230",
+    "duration_seconds": 0.5891608749516308,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_case_sensitive_task_names",
+    "test_plan_item_ids": [
+      "TP_20"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:34:04.096049",
+    "duration_seconds": 0.6327279589604586,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_function_returns_ordering_without_side_effects",
+    "test_plan_item_ids": [
+      "TP_21"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:34:04.679322",
+    "duration_seconds": 0.5831864580977708,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_self_dependency_raises_valueerror",
+    "test_plan_item_ids": [
+      "TP_22"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:34:05.264894",
+    "duration_seconds": 0.585460709175095,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_dependency_with_non_string_element_raises_typeerror",
+    "test_plan_item_ids": [
+      "TP_23"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:34:05.844424",
+    "duration_seconds": 0.5794274171348661,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_complex_graph_with_multiple_paths",
+    "test_plan_item_ids": [
+      "TP_24"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:40:52.548331",
+    "duration_seconds": 0.8477017499972135,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_function_signature_and_return_type",
+    "test_plan_item_ids": [
+      "TP_1"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:40:53.153093",
+    "duration_seconds": 0.6046381250489503,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_basic_linear_dependency_chain",
+    "test_plan_item_ids": [
+      "TP_2"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:40:53.789800",
+    "duration_seconds": 0.6366062089800835,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_all_tasks_appear_exactly_once",
+    "test_plan_item_ids": [
+      "TP_3"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:40:54.401964",
+    "duration_seconds": 0.6120540830306709,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_dependency_ordering_constraint",
+    "test_plan_item_ids": [
+      "TP_4"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:40:54.999265",
+    "duration_seconds": 0.5971913752146065,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_lexicographic_ordering_no_dependencies",
+    "test_plan_item_ids": [
+      "TP_5"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:40:55.598157",
+    "duration_seconds": 0.5987713339272887,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_deterministic_output",
+    "test_plan_item_ids": [
+      "TP_6"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:40:56.167210",
+    "duration_seconds": 0.5689505417831242,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_duplicate_task_names_raises_valueerror",
+    "test_plan_item_ids": [
+      "TP_7"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:40:56.785973",
+    "duration_seconds": 0.6186497919261456,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_unknown_task_in_dependency_raises_valueerror",
+    "test_plan_item_ids": [
+      "TP_8"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:40:57.486298",
+    "duration_seconds": 0.7002087500877678,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_circular_dependency_raises_valueerror",
+    "test_plan_item_ids": [
+      "TP_9"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:40:58.118701",
+    "duration_seconds": 0.6322564999572933,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_tasks_not_list_raises_typeerror",
+    "test_plan_item_ids": [
+      "TP_10"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:40:58.703744",
+    "duration_seconds": 0.5849316250532866,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_dependencies_not_list_raises_typeerror",
+    "test_plan_item_ids": [
+      "TP_11"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:40:59.298549",
+    "duration_seconds": 0.5946977918501943,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_task_name_not_string_raises_typeerror",
+    "test_plan_item_ids": [
+      "TP_12"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:40:59.910547",
+    "duration_seconds": 0.6118792498018593,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_dependency_not_pair_of_strings_raises_typeerror",
+    "test_plan_item_ids": [
+      "TP_13"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:41:00.602314",
+    "duration_seconds": 0.6916293329559267,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_empty_input_returns_empty_list",
+    "test_plan_item_ids": [
+      "TP_14"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:41:01.290195",
+    "duration_seconds": 0.6877655419521034,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_single_task_no_dependencies",
+    "test_plan_item_ids": [
+      "TP_15"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:41:01.890377",
+    "duration_seconds": 0.6000740830786526,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_multiple_independent_tasks_lexicographic_order",
+    "test_plan_item_ids": [
+      "TP_16"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:41:02.464242",
+    "duration_seconds": 0.5737563751172274,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_long_linear_dependency_chain",
+    "test_plan_item_ids": [
+      "TP_17"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:41:03.100422",
+    "duration_seconds": 0.6360691657755524,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_multiple_independent_chains",
+    "test_plan_item_ids": [
+      "TP_18"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:41:03.674726",
+    "duration_seconds": 0.5741834579966962,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_diamond_shaped_dependency_graph",
+    "test_plan_item_ids": [
+      "TP_19"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:41:04.269669",
+    "duration_seconds": 0.594833959126845,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_case_sensitive_task_names",
+    "test_plan_item_ids": [
+      "TP_20"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:41:04.883645",
+    "duration_seconds": 0.6138517078943551,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_function_returns_ordering_only_no_side_effects",
+    "test_plan_item_ids": [
+      "TP_21"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:41:05.731746",
+    "duration_seconds": 0.8479651669040322,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_self_referential_dependency_raises_valueerror",
+    "test_plan_item_ids": [
+      "TP_22"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:41:06.597744",
+    "duration_seconds": 0.8658912919927388,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_duplicate_dependencies_handled_correctly",
+    "test_plan_item_ids": [
+      "TP_23"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-09 17:41:07.467305",
+    "duration_seconds": 0.86944495793432,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_complex_graph_multiple_paths_to_same_node",
+    "test_plan_item_ids": [
+      "TP_24"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-10 22:14:02.216067",
+    "duration_seconds": 0.9854084581602365,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_function_signature_and_return_type",
+    "test_plan_item_ids": [
+      "TP_1"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-10 22:14:02.960865",
+    "duration_seconds": 0.7448345001321286,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_all_tasks_appear_exactly_once",
+    "test_plan_item_ids": [
+      "TP_2"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-10 22:14:03.670382",
+    "duration_seconds": 0.7095352909527719,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_simple_linear_dependency_chain",
+    "test_plan_item_ids": [
+      "TP_3"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-10 22:14:04.382422",
+    "duration_seconds": 0.7120599579066038,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_lexicographic_ordering_no_dependencies",
+    "test_plan_item_ids": [
+      "TP_4"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-10 22:14:05.077556",
+    "duration_seconds": 0.6951442500576377,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_deterministic_output",
+    "test_plan_item_ids": [
+      "TP_5"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-10 22:14:05.754686",
+    "duration_seconds": 0.6771505831275135,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_empty_tasks_and_dependencies",
+    "test_plan_item_ids": [
+      "TP_6"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-10 22:14:06.430583",
+    "duration_seconds": 0.6759137499611825,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_single_task_no_dependencies",
+    "test_plan_item_ids": [
+      "TP_7"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-10 22:14:07.113502",
+    "duration_seconds": 0.682917291065678,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_multiple_independent_tasks_lexicographic_order",
+    "test_plan_item_ids": [
+      "TP_8"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-10 22:14:07.787477",
+    "duration_seconds": 0.6739610419608653,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_long_linear_dependency_chain",
+    "test_plan_item_ids": [
+      "TP_9"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-10 22:14:08.463203",
+    "duration_seconds": 0.67572370916605,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_multiple_independent_chains",
+    "test_plan_item_ids": [
+      "TP_10"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-10 22:14:09.129917",
+    "duration_seconds": 0.6666852501221001,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_diamond_shaped_dependency_graph",
+    "test_plan_item_ids": [
+      "TP_11"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-10 22:14:10.074576",
+    "duration_seconds": 0.9446525410749018,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_duplicate_task_names_raises_valueerror",
+    "test_plan_item_ids": [
+      "TP_12"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-10 22:14:10.984901",
+    "duration_seconds": 0.9102587921079248,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_unknown_task_in_dependency_raises_valueerror",
+    "test_plan_item_ids": [
+      "TP_13"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-10 22:14:11.685973",
+    "duration_seconds": 0.701028750045225,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_circular_dependency_raises_valueerror",
+    "test_plan_item_ids": [
+      "TP_14"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-10 22:14:12.363568",
+    "duration_seconds": 0.6775696252007037,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_tasks_not_list_raises_typeerror",
+    "test_plan_item_ids": [
+      "TP_15"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-10 22:14:13.047804",
+    "duration_seconds": 0.6842058750335127,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_dependencies_not_list_raises_typeerror",
+    "test_plan_item_ids": [
+      "TP_16"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-10 22:14:13.720701",
+    "duration_seconds": 0.6728535001166165,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_task_name_not_string_raises_typeerror",
+    "test_plan_item_ids": [
+      "TP_17"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-10 22:14:14.453323",
+    "duration_seconds": 0.7325857498217374,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_dependency_not_pair_of_strings_raises_typeerror",
+    "test_plan_item_ids": [
+      "TP_18"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-10 22:14:15.229023",
+    "duration_seconds": 0.7756453328765929,
+    "failure_message": "F                                                                        [100%]\n=================================== FAILURES ===================================\n________________________ test_case_sensitive_task_names ________________________\ngenerated/tests/sample_v2/test_generated.py:184: in test_case_sensitive_task_names\n    assert result != ['task', 'Task']\nE   AssertionError: assert ['task', 'Task'] != ['task', 'Task']\n=========================== short test summary info ============================\nFAILED generated/tests/sample_v2/test_generated.py::test_case_sensitive_task_names\n1 failed in 0.05s",
+    "status": "failed",
+    "test_name": "test_case_sensitive_task_names",
+    "test_plan_item_ids": [
+      "TP_19"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-10 22:14:15.943447",
+    "duration_seconds": 0.7143845409154892,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_function_returns_ordering_only",
+    "test_plan_item_ids": [
+      "TP_20"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-10 22:14:16.716693",
+    "duration_seconds": 0.773195874877274,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_self_referential_dependency_raises_valueerror",
+    "test_plan_item_ids": [
+      "TP_21"
+    ],
+    "version": "sample_v2"
+  },
+  {
+    "created_at": "2026-05-10 22:14:17.428536",
+    "duration_seconds": 0.7117995419539511,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_complex_graph_multiple_paths",
+    "test_plan_item_ids": [
+      "TP_22"
+    ],
+    "version": "sample_v2"
+  }
+]

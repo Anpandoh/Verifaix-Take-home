@@ -1,7 +1,9 @@
+import pytest
 from pydantic import BaseModel
 
 from swgen_test_automation.config import LLMSettings
-from swgen_test_automation.llm_client import LLMClient
+from swgen_test_automation.llm import LLMClient
+from swgen_test_automation.llm.prompts import DEFAULT_SYSTEM_PROMPT
 
 
 class SampleOutput(BaseModel):
@@ -42,6 +44,7 @@ def test_generate_model_uses_langchain_structured_output(monkeypatch) -> None:
 
     assert result == SampleOutput(value="ok")
     assert fake_chat.model_type is SampleOutput
+    assert fake_chat.structured_model.messages[0].content == DEFAULT_SYSTEM_PROMPT
     assert "Create output" in fake_chat.structured_model.messages[-1].content
 
 
@@ -52,3 +55,10 @@ def test_generate_model_validates_dict_responses_from_langchain(monkeypatch) -> 
     result = LLMClient(_settings()).generate_model("Create output", SampleOutput)
 
     assert result == SampleOutput(value="ok")
+
+
+def test_none_provider_fails_before_building_chat_model() -> None:
+    settings = LLMSettings(provider="none")
+
+    with pytest.raises(RuntimeError, match="provider is set to 'none'"):
+        LLMClient(settings)._build_chat_model()

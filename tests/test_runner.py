@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from swgen_test_automation.runner import run_pytest_for_version
+from swgen_test_automation.execute_tests import run_pytest_for_version
 
 
 def test_runner_maps_pytest_results_to_test_plan_ids(tmp_path: Path) -> None:

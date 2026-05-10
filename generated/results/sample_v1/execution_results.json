@@ -1,0 +1,277 @@
+[
+  {
+    "created_at": "2026-05-10 22:13:08.420768",
+    "duration_seconds": 1.068901542108506,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_function_signature",
+    "test_plan_item_ids": [
+      "TP_1"
+    ],
+    "version": "sample_v1"
+  },
+  {
+    "created_at": "2026-05-10 22:13:09.181348",
+    "duration_seconds": 0.7604082499165088,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_basic_linear_dependency_chain",
+    "test_plan_item_ids": [
+      "TP_2"
+    ],
+    "version": "sample_v1"
+  },
+  {
+    "created_at": "2026-05-10 22:13:09.921434",
+    "duration_seconds": 0.7399443751201034,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_all_tasks_appear_exactly_once",
+    "test_plan_item_ids": [
+      "TP_3"
+    ],
+    "version": "sample_v1"
+  },
+  {
+    "created_at": "2026-05-10 22:13:10.658021",
+    "duration_seconds": 0.7364457920193672,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_dependency_ordering_constraint",
+    "test_plan_item_ids": [
+      "TP_4"
+    ],
+    "version": "sample_v1"
+  },
+  {
+    "created_at": "2026-05-10 22:13:11.410216",
+    "duration_seconds": 0.7520298750605434,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_lexicographic_ordering_no_dependencies",
+    "test_plan_item_ids": [
+      "TP_5"
+    ],
+    "version": "sample_v1"
+  },
+  {
+    "created_at": "2026-05-10 22:13:12.152420",
+    "duration_seconds": 0.7420794588979334,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_deterministic_output",
+    "test_plan_item_ids": [
+      "TP_6"
+    ],
+    "version": "sample_v1"
+  },
+  {
+    "created_at": "2026-05-10 22:13:12.882628",
+    "duration_seconds": 0.7300654170103371,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_empty_input",
+    "test_plan_item_ids": [
+      "TP_7"
+    ],
+    "version": "sample_v1"
+  },
+  {
+    "created_at": "2026-05-10 22:13:13.608579",
+    "duration_seconds": 0.7258016669657081,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_single_task_no_dependencies",
+    "test_plan_item_ids": [
+      "TP_8"
+    ],
+    "version": "sample_v1"
+  },
+  {
+    "created_at": "2026-05-10 22:13:14.328360",
+    "duration_seconds": 0.7196197079028934,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_multiple_independent_tasks_lexicographic",
+    "test_plan_item_ids": [
+      "TP_9"
+    ],
+    "version": "sample_v1"
+  },
+  {
+    "created_at": "2026-05-10 22:13:15.123106",
+    "duration_seconds": 0.7946133750956506,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_long_linear_dependency_chain",
+    "test_plan_item_ids": [
+      "TP_10"
+    ],
+    "version": "sample_v1"
+  },
+  {
+    "created_at": "2026-05-10 22:13:15.936580",
+    "duration_seconds": 0.8133161249570549,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_diamond_dependency_graph",
+    "test_plan_item_ids": [
+      "TP_11"
+    ],
+    "version": "sample_v1"
+  },
+  {
+    "created_at": "2026-05-10 22:13:16.714895",
+    "duration_seconds": 0.7781694158911705,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_multiple_independent_chains",
+    "test_plan_item_ids": [
+      "TP_12"
+    ],
+    "version": "sample_v1"
+  },
+  {
+    "created_at": "2026-05-10 22:13:17.420381",
+    "duration_seconds": 0.7053459170274436,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_duplicate_task_names_raises_valueerror",
+    "test_plan_item_ids": [
+      "TP_13"
+    ],
+    "version": "sample_v1"
+  },
+  {
+    "created_at": "2026-05-10 22:13:18.107620",
+    "duration_seconds": 0.6871185831259936,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_unknown_task_in_dependency_raises_valueerror",
+    "test_plan_item_ids": [
+      "TP_14"
+    ],
+    "version": "sample_v1"
+  },
+  {
+    "created_at": "2026-05-10 22:13:18.795349",
+    "duration_seconds": 0.6876108751166612,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_circular_dependency_raises_valueerror",
+    "test_plan_item_ids": [
+      "TP_15"
+    ],
+    "version": "sample_v1"
+  },
+  {
+    "created_at": "2026-05-10 22:13:19.523949",
+    "duration_seconds": 0.7284795420709997,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_tasks_not_list_raises_typeerror",
+    "test_plan_item_ids": [
+      "TP_16"
+    ],
+    "version": "sample_v1"
+  },
+  {
+    "created_at": "2026-05-10 22:13:20.241981",
+    "duration_seconds": 0.7179007909726351,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_dependencies_not_list_raises_typeerror",
+    "test_plan_item_ids": [
+      "TP_17"
+    ],
+    "version": "sample_v1"
+  },
+  {
+    "created_at": "2026-05-10 22:13:20.964533",
+    "duration_seconds": 0.7224075829144567,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_task_name_not_string_raises_typeerror",
+    "test_plan_item_ids": [
+      "TP_18"
+    ],
+    "version": "sample_v1"
+  },
+  {
+    "created_at": "2026-05-10 22:13:21.673530",
+    "duration_seconds": 0.708863457897678,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_dependency_not_pair_of_strings_raises_typeerror",
+    "test_plan_item_ids": [
+      "TP_19"
+    ],
+    "version": "sample_v1"
+  },
+  {
+    "created_at": "2026-05-10 22:13:22.472944",
+    "duration_seconds": 0.7992554579395801,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_case_sensitive_task_names",
+    "test_plan_item_ids": [
+      "TP_20"
+    ],
+    "version": "sample_v1"
+  },
+  {
+    "created_at": "2026-05-10 22:13:23.189349",
+    "duration_seconds": 0.7162639170419425,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_function_returns_ordering_only",
+    "test_plan_item_ids": [
+      "TP_21"
+    ],
+    "version": "sample_v1"
+  },
+  {
+    "created_at": "2026-05-10 22:13:23.999950",
+    "duration_seconds": 0.8104492919519544,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_self_dependency_raises_valueerror",
+    "test_plan_item_ids": [
+      "TP_22"
+    ],
+    "version": "sample_v1"
+  },
+  {
+    "created_at": "2026-05-10 22:13:24.730730",
+    "duration_seconds": 0.7306403329130262,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_complex_multi_level_dependency_graph",
+    "test_plan_item_ids": [
+      "TP_23"
+    ],
+    "version": "sample_v1"
+  },
+  {
+    "created_at": "2026-05-10 22:13:25.436186",
+    "duration_seconds": 0.7053441661410034,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_empty_dependencies_multiple_tasks",
+    "test_plan_item_ids": [
+      "TP_24"
+    ],
+    "version": "sample_v1"
+  },
+  {
+    "created_at": "2026-05-10 22:13:26.163824",
+    "duration_seconds": 0.7275155421812087,
+    "failure_message": null,
+    "status": "passed",
+    "test_name": "test_large_task_count_performance",
+    "test_plan_item_ids": [
+      "TP_25"
+    ],
+    "version": "sample_v1"
+  }
+]

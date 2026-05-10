@@ -1,0 +1,34 @@
+[
+  {
+    "artifact_type": "execution_results",
+    "content_hash": "3ec8eed65697d191bf2d2dbfe2980a8fcb93a0d6fc2bedcc95aa73710b284a1b",
+    "created_at": "2026-05-10 23:09:23.460357",
+    "name": "execution_results.json",
+    "path": "generated/results/task_scheduler_with_v1/execution_results.json",
+    "version": "task_scheduler_with_v1"
+  },
+  {
+    "artifact_type": "generated_code",
+    "content_hash": "8a76ec4f91bb3b71f505a2bd335f75c896eca1cd93708ce602f0c9aa36ebd8d7",
+    "created_at": "2026-05-10 23:08:52.595165",
+    "name": "task_scheduler.py",
+    "path": "generated/code/task_scheduler_with_v1/task_scheduler.py",
+    "version": "task_scheduler_with_v1"
+  },
+  {
+    "artifact_type": "generated_tests",
+    "content_hash": "cc2f71a07af1f86d0c668e4d5d5d3b63f3e0f584f476aedab0dc009e93120d50",
+    "created_at": "2026-05-10 23:09:10.877889",
+    "name": "test_generated.py",
+    "path": "generated/tests/task_scheduler_with_v1/test_generated.py",
+    "version": "task_scheduler_with_v1"
+  },
+  {
+    "artifact_type": "test_plan",
+    "content_hash": "c6c3acb6ae8aa09ee233bbcdb61d9c81dfeac2d15be87c78e6c2e9a8965b149f",
+    "created_at": "2026-05-10 23:08:46.415981",
+    "name": "test_plan.json",
+    "path": "generated/plans/task_scheduler_with_v1/test_plan.json",
+    "version": "task_scheduler_with_v1"
+  }
+]

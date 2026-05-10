@@ -1,0 +1,34 @@
+[
+  {
+    "artifact_type": "execution_results",
+    "content_hash": "5b26163743237198d91e9c7585550796365046509e383af7a20583ca8436ebba",
+    "created_at": "2026-05-10 23:26:52.674985",
+    "name": "execution_results.json",
+    "path": "generated/results/task_scheduler_with_dependencies_v2/execution_results.json",
+    "version": "task_scheduler_with_dependencies_v2"
+  },
+  {
+    "artifact_type": "generated_code",
+    "content_hash": "b680617b8df24c3f3de0ee3ecb1c1cbfaab6ec8a2f435d2b3953cd2b431d3ee1",
+    "created_at": "2026-05-10 23:12:37.832795",
+    "name": "task_scheduler.py",
+    "path": "generated/code/task_scheduler_with_dependencies_v2/task_scheduler.py",
+    "version": "task_scheduler_with_dependencies_v2"
+  },
+  {
+    "artifact_type": "generated_tests",
+    "content_hash": "e745797176f771eb57ed8c7fc3aba518deaab73be052ec3e02d0267dda4dc6dd",
+    "created_at": "2026-05-10 23:12:58.848150",
+    "name": "test_generated.py",
+    "path": "generated/tests/task_scheduler_with_dependencies_v2/test_generated.py",
+    "version": "task_scheduler_with_dependencies_v2"
+  },
+  {
+    "artifact_type": "test_plan",
+    "content_hash": "e7b679dc826fc1d0c7afe05c71484b8a225370aee1095bba51339582e099c12d",
+    "created_at": "2026-05-10 23:12:31.444269",
+    "name": "test_plan.json",
+    "path": "generated/plans/task_scheduler_with_dependencies_v2/test_plan.json",
+    "version": "task_scheduler_with_dependencies_v2"
+  }
+]
