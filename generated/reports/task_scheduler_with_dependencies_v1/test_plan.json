@@ -12,116 +12,129 @@
       "test_type": "behavior"
     },
     {
-      "description": "Verify multiple independent chains are ordered deterministically",
+      "description": "Test long linear dependency chain",
       "edge_case": true,
-      "expected_behavior": "Multiple independent dependency chains are merged with lexicographic ordering of available tasks",
+      "expected_behavior": "Returns tasks in correct dependency order",
       "id": "TP_10",
       "source_sections": [
-        "section_1.4"
+        "section_1.4",
+        "section_12",
+        "section_13"
       ],
       "test_type": "behavior"
     },
     {
-      "description": "Verify long dependency chain execution",
+      "description": "Test diamond-shaped dependency graph",
       "edge_case": true,
-      "expected_behavior": "Long linear dependency chains maintain correct ordering",
+      "expected_behavior": "Returns ['a', 'b', 'c', 'd'] where 'd' appears after both 'b' and 'c'",
       "id": "TP_11",
       "source_sections": [
-        "section_1.4"
+        "section_1.4",
+        "section_14",
+        "section_15"
       ],
       "test_type": "behavior"
     },
     {
-      "description": "Verify ValueError on duplicate task names",
-      "edge_case": false,
-      "expected_behavior": "Raises ValueError when tasks list contains duplicate names",
+      "description": "Test multiple independent dependency chains",
+      "edge_case": true,
+      "expected_behavior": "Returns deterministic ordering respecting all dependencies and lexicographic availability",
       "id": "TP_12",
       "source_sections": [
-        "section_10",
-        "section_11"
+        "section_1.4",
+        "section_12",
+        "section_13"
       ],
       "test_type": "behavior"
     },
     {
-      "description": "Verify ValueError on dependency referring to unknown task",
+      "description": "Test ValueError for duplicate task names",
       "edge_case": false,
-      "expected_behavior": "Raises ValueError when dependency references a task not in tasks list",
+      "expected_behavior": "Raises ValueError when tasks list contains duplicate names",
       "id": "TP_13",
       "source_sections": [
+        "section_1.3",
         "section_10",
         "section_11"
       ],
       "test_type": "behavior"
     },
     {
-      "description": "Verify ValueError on circular dependency detection",
+      "description": "Test ValueError for dependency referring to unknown task",
       "edge_case": false,
-      "expected_behavior": "Raises ValueError when circular dependency exists",
+      "expected_behavior": "Raises ValueError when dependency references task not in tasks list",
       "id": "TP_14",
       "source_sections": [
+        "section_1.3",
         "section_10",
         "section_11"
       ],
       "test_type": "behavior"
     },
     {
-      "description": "Verify TypeError when tasks parameter is not a list",
+      "description": "Test ValueError for circular dependency",
       "edge_case": false,
-      "expected_behavior": "Raises TypeError when tasks is not a list",
+      "expected_behavior": "Raises ValueError when circular dependency exists (e.g., A->B->A)",
       "id": "TP_15",
       "source_sections": [
+        "section_1.3",
         "section_10",
         "section_11"
       ],
       "test_type": "behavior"
     },
     {
-      "description": "Verify TypeError when dependencies parameter is not a list",
+      "description": "Test TypeError when tasks parameter is not a list",
       "edge_case": false,
-      "expected_behavior": "Raises TypeError when dependencies is not a list",
+      "expected_behavior": "Raises TypeError for non-list tasks parameter",
       "id": "TP_16",
       "source_sections": [
+        "section_1.3",
         "section_10",
         "section_11"
       ],
       "test_type": "behavior"
     },
     {
-      "description": "Verify TypeError when task name is not a string",
+      "description": "Test TypeError when dependencies parameter is not a list",
       "edge_case": false,
-      "expected_behavior": "Raises TypeError when any task name is not a string",
+      "expected_behavior": "Raises TypeError for non-list dependencies parameter",
       "id": "TP_17",
       "source_sections": [
+        "section_1.3",
         "section_10",
         "section_11"
       ],
       "test_type": "behavior"
     },
     {
-      "description": "Verify TypeError when dependency is not a pair of strings",
+      "description": "Test TypeError when task name is not a string",
       "edge_case": false,
-      "expected_behavior": "Raises TypeError when dependency tuple is malformed or contains non-strings",
+      "expected_behavior": "Raises TypeError when tasks list contains non-string elements",
       "id": "TP_18",
       "source_sections": [
+        "section_1.3",
         "section_10",
         "section_11"
       ],
       "test_type": "behavior"
     },
     {
-      "description": "Verify task names are case-sensitive",
+      "description": "Test TypeError when dependency is not a pair of strings",
       "edge_case": false,
-      "expected_behavior": "Tasks 'Task' and 'task' are treated as different tasks",
+      "expected_behavior": "Raises TypeError when dependency tuple is malformed or contains non-strings",
       "id": "TP_19",
       "source_sections": [
-        "section_1.5"
+        "section_1.3",
+        "section_10",
+        "section_11"
       ],
       "test_type": "behavior"
     },
     {
-      "description": "Verify basic linear dependency chain execution order",
+      "description": "Test basic linear dependency chain execution order",
       "edge_case": false,
-      "expected_behavior": "Given tasks [fetch_data, clean_data, train_model, evaluate_model] with linear dependencies, returns [fetch_data, clean_data, train_model, evaluate_model]",
+      "expected_behavior": "Returns ['fetch_data', 'clean_data', 'train_model', 'evaluate_model'] for the provided example",
       "id": "TP_2",
       "source_sections": [
         "section_7",
@@ -131,9 +144,9 @@
       "test_type": "behavior"
     },
     {
-      "description": "Verify function does not execute tasks or modify external state",
+      "description": "Verify task names are case-sensitive",
       "edge_case": false,
-      "expected_behavior": "Function returns ordering only without executing tasks or touching files",
+      "expected_behavior": "Tasks 'Task' and 'task' are treated as different tasks",
       "id": "TP_20",
       "source_sections": [
         "section_1.5"
@@ -141,50 +154,64 @@
       "test_type": "behavior"
     },
     {
-      "description": "Verify self-referential dependency is rejected",
-      "edge_case": true,
-      "expected_behavior": "Raises ValueError when a task has a dependency on itself",
+      "description": "Verify function returns ordering only without executing tasks",
+      "edge_case": false,
+      "expected_behavior": "Function returns list of task names without side effects",
       "id": "TP_21",
       "source_sections": [
+        "section_1.5"
+      ],
+      "test_type": "behavior"
+    },
+    {
+      "description": "Test complex graph with multiple paths and convergence points",
+      "edge_case": true,
+      "expected_behavior": "Returns valid topological ordering respecting all dependencies",
+      "id": "TP_22",
+      "source_sections": [
+        "section_1.2",
+        "section_1.4"
+      ],
+      "test_type": "behavior"
+    },
+    {
+      "description": "Test self-dependency error handling",
+      "edge_case": true,
+      "expected_behavior": "Raises ValueError when task has dependency on itself",
+      "id": "TP_23",
+      "source_sections": [
+        "section_1.3",
         "section_10",
         "section_11"
       ],
       "test_type": "behavior"
     },
     {
-      "description": "Verify complex multi-level dependency graph",
-      "edge_case": true,
-      "expected_behavior": "Complex graphs with multiple levels of dependencies maintain correct ordering",
-      "id": "TP_22",
-      "source_sections": [
-        "section_1.2"
-      ],
-      "test_type": "behavior"
-    },
-    {
-      "description": "Verify empty dependencies list with multiple tasks",
-      "edge_case": true,
-      "expected_behavior": "Multiple tasks with no dependencies returns lexicographically sorted list",
-      "id": "TP_23",
-      "source_sections": [
-        "section_1.4"
-      ],
-      "test_type": "behavior"
-    },
-    {
-      "description": "Verify duplicate dependencies are handled correctly",
-      "edge_case": true,
-      "expected_behavior": "Duplicate dependency pairs do not affect output correctness",
+      "description": "Test empty dependencies list with multiple tasks",
+      "edge_case": false,
+      "expected_behavior": "Returns tasks in lexicographic order",
       "id": "TP_24",
       "source_sections": [
-        "section_1.2"
+        "section_1.4",
+        "section_12",
+        "section_13"
       ],
       "test_type": "behavior"
     },
     {
-      "description": "Verify lexicographic ordering when no dependencies exist",
+      "description": "Test large number of tasks and dependencies for performance",
+      "edge_case": true,
+      "expected_behavior": "Completes in reasonable time with O((N + E) log N) complexity",
+      "id": "TP_25",
+      "source_sections": [
+        "section_1.5"
+      ],
+      "test_type": "behavior"
+    },
+    {
+      "description": "Verify every task in input appears exactly once in output",
       "edge_case": false,
-      "expected_behavior": "Given tasks [b, a, c] with empty dependencies, returns [a, b, c]",
+      "expected_behavior": "All tasks from input list are present in output with no duplicates",
       "id": "TP_3",
       "source_sections": [
         "section_1.2"
@@ -192,9 +219,9 @@
       "test_type": "behavior"
     },
     {
-      "description": "Verify every task appears exactly once in output",
+      "description": "Verify dependency ordering constraint: for each (A, B) pair, A appears before B",
       "edge_case": false,
-      "expected_behavior": "Output list contains all input tasks with no duplicates",
+      "expected_behavior": "All dependency pairs maintain correct ordering in output",
       "id": "TP_4",
       "source_sections": [
         "section_1.2"
@@ -202,9 +229,9 @@
       "test_type": "behavior"
     },
     {
-      "description": "Verify dependency ordering constraint is satisfied",
+      "description": "Test lexicographic ordering when multiple tasks are available",
       "edge_case": false,
-      "expected_behavior": "For every dependency pair (A, B), A appears before B in the output",
+      "expected_behavior": "Returns ['a', 'b', 'c'] for tasks=['b', 'a', 'c'] with empty dependencies",
       "id": "TP_5",
       "source_sections": [
         "section_1.2"
@@ -212,9 +239,9 @@
       "test_type": "behavior"
     },
     {
-      "description": "Verify deterministic output with lexicographic selection",
+      "description": "Test deterministic output consistency across multiple calls",
       "edge_case": false,
-      "expected_behavior": "When multiple tasks are available, lexicographically smallest is selected first",
+      "expected_behavior": "Multiple calls with same input produce identical output",
       "id": "TP_6",
       "source_sections": [
         "section_1.2"
@@ -222,33 +249,38 @@
       "test_type": "behavior"
     },
     {
-      "description": "Verify diamond-shaped dependency graph handling",
-      "edge_case": false,
-      "expected_behavior": "Given tasks [a, b, c, d] with diamond dependencies, returns [a, b, c, d]",
+      "description": "Test empty tasks and dependencies boundary condition",
+      "edge_case": true,
+      "expected_behavior": "Returns empty list []",
       "id": "TP_7",
       "source_sections": [
-        "section_14",
-        "section_15"
+        "section_1.4",
+        "section_12",
+        "section_13"
       ],
       "test_type": "behavior"
     },
     {
-      "description": "Verify empty tasks and dependencies returns empty list",
+      "description": "Test single task with no dependencies boundary condition",
       "edge_case": true,
-      "expected_behavior": "schedule_tasks([], []) returns []",
+      "expected_behavior": "Returns list containing the single task",
       "id": "TP_8",
       "source_sections": [
-        "section_1.4"
+        "section_1.4",
+        "section_12",
+        "section_13"
       ],
       "test_type": "behavior"
     },
     {
-      "description": "Verify single task with no dependencies",
+      "description": "Test multiple independent tasks with no dependencies",
       "edge_case": true,
-      "expected_behavior": "schedule_tasks([task], []) returns [task]",
+      "expected_behavior": "Returns tasks in lexicographic order",
       "id": "TP_9",
       "source_sections": [
-        "section_1.4"
+        "section_1.4",
+        "section_12",
+        "section_13"
       ],
       "test_type": "behavior"
     }

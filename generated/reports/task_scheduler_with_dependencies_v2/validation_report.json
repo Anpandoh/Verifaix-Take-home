@@ -4,177 +4,177 @@
     "items": [
       {
         "after": null,
-        "before": "Verify self-referential dependency is rejected | sections=section_10, section_11 | type=behavior | expected=Raises ValueError when a task has a dependency on itself | edge=True",
+        "before": "Test large number of tasks and dependencies for performance | sections=section_1.5 | type=behavior | expected=Completes in reasonable time with O((N + E) log N) complexity | edge=True",
         "change_type": "removed",
         "id": "D_1",
-        "item_id": "TP_21"
+        "item_id": "TP_25"
       },
       {
-        "after": null,
-        "before": "Verify complex multi-level dependency graph | sections=section_1.2 | type=behavior | expected=Complex graphs with multiple levels of dependencies maintain correct ordering | edge=True",
-        "change_type": "removed",
-        "id": "D_2",
-        "item_id": "TP_22"
-      },
-      {
-        "after": null,
-        "before": "Verify empty dependencies list with multiple tasks | sections=section_1.4 | type=behavior | expected=Multiple tasks with no dependencies returns lexicographically sorted list | edge=True",
-        "change_type": "removed",
-        "id": "D_3",
-        "item_id": "TP_23"
-      },
-      {
-        "after": null,
-        "before": "Verify duplicate dependencies are handled correctly | sections=section_1.2 | type=behavior | expected=Duplicate dependency pairs do not affect output correctness | edge=True",
-        "change_type": "removed",
-        "id": "D_4",
-        "item_id": "TP_24"
-      },
-      {
-        "after": "Verify function signature matches API specification | sections=section_2, section_3 | type=behavior | expected=Function schedule_tasks accepts list[str] tasks and list[tuple[str, str]] dependencies, returns list[str] | edge=False",
+        "after": "Verify function signature matches schedule_tasks(tasks: list[str], dependencies: list[tuple[str, str]]) -> list[str] | sections=section_2, section_3 | type=behavior | expected=Function accepts two parameters (tasks list and dependencies list) and returns a list of strings | edge=False",
         "before": "Verify function signature matches schedule_tasks(tasks: list[str], dependencies: list[tuple[str, str]]) -> list[str] | sections=section_1.1 | type=behavior | expected=Function accepts two parameters (tasks list and dependencies list) and returns a list of strings | edge=False",
         "change_type": "modified",
-        "id": "D_5",
+        "id": "D_2",
         "item_id": "TP_1"
       },
       {
-        "after": "Test circular dependency raises ValueError | sections=section_6 | type=behavior | expected=Raises ValueError when circular dependency is detected | edge=True",
-        "before": "Verify multiple independent chains are ordered deterministically | sections=section_1.4 | type=behavior | expected=Multiple independent dependency chains are merged with lexicographic ordering of available tasks | edge=True",
+        "after": "Verify long linear dependency chain maintains correct order | sections=section_8 | type=behavior | expected=Long chain of dependencies is resolved in correct sequential order | edge=True",
+        "before": "Test long linear dependency chain | sections=section_1.4, section_12, section_13 | type=behavior | expected=Returns tasks in correct dependency order | edge=True",
         "change_type": "modified",
-        "id": "D_6",
+        "id": "D_3",
         "item_id": "TP_10"
       },
       {
-        "after": "Test tasks parameter is not a list raises TypeError | sections=section_6 | type=behavior | expected=Raises TypeError when tasks is not a list | edge=True",
-        "before": "Verify long dependency chain execution | sections=section_1.4 | type=behavior | expected=Long linear dependency chains maintain correct ordering | edge=True",
+        "after": "Verify multiple independent chains with deterministic ordering | sections=section_8 | type=behavior | expected=Multiple independent dependency chains are ordered deterministically using lexicographic availability | edge=True",
+        "before": "Test diamond-shaped dependency graph | sections=section_1.4, section_14, section_15 | type=behavior | expected=Returns ['a', 'b', 'c', 'd'] where 'd' appears after both 'b' and 'c' | edge=True",
         "change_type": "modified",
-        "id": "D_7",
+        "id": "D_4",
         "item_id": "TP_11"
       },
       {
-        "after": "Test dependencies parameter is not a list raises TypeError | sections=section_6 | type=behavior | expected=Raises TypeError when dependencies is not a list | edge=True",
-        "before": "Verify ValueError on duplicate task names | sections=section_10, section_11 | type=behavior | expected=Raises ValueError when tasks list contains duplicate names | edge=False",
+        "after": "Verify diamond-shaped dependency graph resolves correctly | sections=section_8, section_9 | type=behavior | expected=schedule_tasks(['a', 'b', 'c', 'd'], [('a', 'b'), ('a', 'c'), ('b', 'd'), ('c', 'd')]) returns ['a', 'b', 'c', 'd'] | edge=True",
+        "before": "Test multiple independent dependency chains | sections=section_1.4, section_12, section_13 | type=behavior | expected=Returns deterministic ordering respecting all dependencies and lexicographic availability | edge=True",
         "change_type": "modified",
-        "id": "D_8",
+        "id": "D_5",
         "item_id": "TP_12"
       },
       {
-        "after": "Test task name is not a string raises TypeError | sections=section_6 | type=behavior | expected=Raises TypeError when any task name is not a string | edge=True",
-        "before": "Verify ValueError on dependency referring to unknown task | sections=section_10, section_11 | type=behavior | expected=Raises ValueError when dependency references a task not in tasks list | edge=False",
+        "after": "Verify ValueError raised for duplicate task names | sections=section_7 | type=behavior | expected=Raises ValueError when tasks list contains duplicate names | edge=False",
+        "before": "Test ValueError for duplicate task names | sections=section_1.3, section_10, section_11 | type=behavior | expected=Raises ValueError when tasks list contains duplicate names | edge=False",
         "change_type": "modified",
-        "id": "D_9",
+        "id": "D_6",
         "item_id": "TP_13"
       },
       {
-        "after": "Test dependency pair is not a tuple of strings raises TypeError | sections=section_6 | type=behavior | expected=Raises TypeError when dependency is not a pair of strings | edge=True",
-        "before": "Verify ValueError on circular dependency detection | sections=section_10, section_11 | type=behavior | expected=Raises ValueError when circular dependency exists | edge=False",
+        "after": "Verify ValueError raised for dependency referencing unknown task | sections=section_7 | type=behavior | expected=Raises ValueError when dependency pair references a task not in tasks list | edge=False",
+        "before": "Test ValueError for dependency referring to unknown task | sections=section_1.3, section_10, section_11 | type=behavior | expected=Raises ValueError when dependency references task not in tasks list | edge=False",
         "change_type": "modified",
-        "id": "D_10",
+        "id": "D_7",
         "item_id": "TP_14"
       },
       {
-        "after": "Test case sensitivity of task names | sections=section_2 | type=behavior | expected=Task names are treated as case-sensitive; 'Task' and 'task' are different tasks | edge=False",
-        "before": "Verify TypeError when tasks parameter is not a list | sections=section_10, section_11 | type=behavior | expected=Raises TypeError when tasks is not a list | edge=False",
+        "after": "Verify ValueError raised for circular dependency | sections=section_7 | type=behavior | expected=Raises ValueError when circular dependency exists (e.g., A->B->A) | edge=False",
+        "before": "Test ValueError for circular dependency | sections=section_1.3, section_10, section_11 | type=behavior | expected=Raises ValueError when circular dependency exists (e.g., A->B->A) | edge=False",
         "change_type": "modified",
-        "id": "D_11",
+        "id": "D_8",
         "item_id": "TP_15"
       },
       {
-        "after": "Test function does not execute tasks or modify external state | sections=section_2 | type=behavior | expected=Function returns ordering only without executing tasks or touching files | edge=False",
-        "before": "Verify TypeError when dependencies parameter is not a list | sections=section_10, section_11 | type=behavior | expected=Raises TypeError when dependencies is not a list | edge=False",
+        "after": "Verify TypeError raised when tasks is not a list | sections=section_7 | type=behavior | expected=Raises TypeError when tasks parameter is not a list | edge=False",
+        "before": "Test TypeError when tasks parameter is not a list | sections=section_1.3, section_10, section_11 | type=behavior | expected=Raises TypeError for non-list tasks parameter | edge=False",
         "change_type": "modified",
-        "id": "D_12",
+        "id": "D_9",
         "item_id": "TP_16"
       },
       {
-        "after": "Test every task appears exactly once in output | sections=section_6 | type=behavior | expected=All tasks from input appear exactly once in returned list | edge=False",
-        "before": "Verify TypeError when task name is not a string | sections=section_10, section_11 | type=behavior | expected=Raises TypeError when any task name is not a string | edge=False",
+        "after": "Verify TypeError raised when dependencies is not a list | sections=section_7 | type=behavior | expected=Raises TypeError when dependencies parameter is not a list | edge=False",
+        "before": "Test TypeError when dependencies parameter is not a list | sections=section_1.3, section_10, section_11 | type=behavior | expected=Raises TypeError for non-list dependencies parameter | edge=False",
         "change_type": "modified",
-        "id": "D_13",
+        "id": "D_10",
         "item_id": "TP_17"
       },
       {
-        "after": "Test deterministic output on repeated calls | sections=section_6 | type=behavior | expected=Multiple calls with same inputs return identical output | edge=False",
-        "before": "Verify TypeError when dependency is not a pair of strings | sections=section_10, section_11 | type=behavior | expected=Raises TypeError when dependency tuple is malformed or contains non-strings | edge=False",
+        "after": "Verify TypeError raised when task name is not a string | sections=section_7 | type=behavior | expected=Raises TypeError when any task name in tasks list is not a string | edge=False",
+        "before": "Test TypeError when task name is not a string | sections=section_1.3, section_10, section_11 | type=behavior | expected=Raises TypeError when tasks list contains non-string elements | edge=False",
         "change_type": "modified",
-        "id": "D_14",
+        "id": "D_11",
         "item_id": "TP_18"
       },
       {
-        "after": "Test long dependency chain with many tasks | sections=section_7 | type=behavior | expected=Correctly orders long linear chain respecting all dependencies | edge=True",
-        "before": "Verify task names are case-sensitive | sections=section_1.5 | type=behavior | expected=Tasks 'Task' and 'task' are treated as different tasks | edge=False",
+        "after": "Verify TypeError raised when dependency is not a pair of strings | sections=section_8 | type=behavior | expected=Raises TypeError when any dependency is not a tuple of two strings | edge=False",
+        "before": "Test TypeError when dependency is not a pair of strings | sections=section_1.3, section_10, section_11 | type=behavior | expected=Raises TypeError when dependency tuple is malformed or contains non-strings | edge=False",
         "change_type": "modified",
-        "id": "D_15",
+        "id": "D_12",
         "item_id": "TP_19"
       },
       {
-        "after": "Test linear dependency chain execution order | sections=section_3, section_5 | type=behavior | expected=Returns tasks in dependency order: fetch_data -> clean_data -> train_model -> evaluate_model | edge=False",
-        "before": "Verify basic linear dependency chain execution order | sections=section_7, section_8, section_9 | type=behavior | expected=Given tasks [fetch_data, clean_data, train_model, evaluate_model] with linear dependencies, returns [fetch_data, clean_data, train_model, evaluate_model] | edge=False",
+        "after": "Verify linear dependency chain execution order | sections=section_4, section_5, section_6 | type=behavior | expected=Returns ['fetch_data', 'clean_data', 'train_model', 'evaluate_model'] for the provided example | edge=False",
+        "before": "Test basic linear dependency chain execution order | sections=section_7, section_8, section_9 | type=behavior | expected=Returns ['fetch_data', 'clean_data', 'train_model', 'evaluate_model'] for the provided example | edge=False",
         "change_type": "modified",
-        "id": "D_16",
+        "id": "D_13",
         "item_id": "TP_2"
       },
       {
-        "after": "Test complex graph with multiple paths and convergence points | sections=section_7 | type=behavior | expected=Returns valid topological sort respecting all dependency constraints | edge=False",
-        "before": "Verify function does not execute tasks or modify external state | sections=section_1.5 | type=behavior | expected=Function returns ordering only without executing tasks or touching files | edge=False",
+        "after": "Verify function returns ordering only without executing tasks | sections=section_1.5 | type=behavior | expected=Function returns a list of task names in order without side effects | edge=False",
+        "before": "Verify function returns ordering only without executing tasks | sections=section_1.5 | type=behavior | expected=Function returns list of task names without side effects | edge=False",
         "change_type": "modified",
-        "id": "D_17",
-        "item_id": "TP_20"
+        "id": "D_14",
+        "item_id": "TP_21"
       },
       {
-        "after": "Test lexicographic ordering when no dependencies exist | sections=section_6 | type=behavior | expected=Returns tasks in descending lexicographic order: [c, b, a] | edge=False",
-        "before": "Verify lexicographic ordering when no dependencies exist | sections=section_1.2 | type=behavior | expected=Given tasks [b, a, c] with empty dependencies, returns [a, b, c] | edge=False",
+        "after": "Verify performance with large task count | sections=section_1.5 | type=behavior | expected=Function completes in reasonable time for large inputs, meeting O((N + E) log N) complexity | edge=True",
+        "before": "Test complex graph with multiple paths and convergence points | sections=section_1.2, section_1.4 | type=behavior | expected=Returns valid topological ordering respecting all dependencies | edge=True",
+        "change_type": "modified",
+        "id": "D_15",
+        "item_id": "TP_22"
+      },
+      {
+        "after": "Verify self-referential dependency raises error | sections=section_7 | type=behavior | expected=Raises ValueError when a task has a dependency on itself | edge=True",
+        "before": "Test self-dependency error handling | sections=section_1.3, section_10, section_11 | type=behavior | expected=Raises ValueError when task has dependency on itself | edge=True",
+        "change_type": "modified",
+        "id": "D_16",
+        "item_id": "TP_23"
+      },
+      {
+        "after": "Verify complex diamond with multiple convergence points | sections=section_8, section_9 | type=behavior | expected=Complex dependency graphs with multiple convergence points resolve correctly | edge=True",
+        "before": "Test empty dependencies list with multiple tasks | sections=section_1.4, section_12, section_13 | type=behavior | expected=Returns tasks in lexicographic order | edge=False",
+        "change_type": "modified",
+        "id": "D_17",
+        "item_id": "TP_24"
+      },
+      {
+        "after": "Verify every task appears exactly once in output | sections=section_7 | type=behavior | expected=All tasks from input list appear exactly once in the returned ordering | edge=False",
+        "before": "Verify every task in input appears exactly once in output | sections=section_1.2 | type=behavior | expected=All tasks from input list are present in output with no duplicates | edge=False",
         "change_type": "modified",
         "id": "D_18",
         "item_id": "TP_3"
       },
       {
-        "after": "Test single task with no dependencies | sections=section_7 | type=behavior | expected=Returns list containing only the single task | edge=True",
-        "before": "Verify every task appears exactly once in output | sections=section_1.2 | type=behavior | expected=Output list contains all input tasks with no duplicates | edge=False",
+        "after": "Verify dependency ordering constraint is satisfied | sections=section_7 | type=behavior | expected=For every dependency pair (A, B), task A appears before task B in the output | edge=False",
+        "before": "Verify dependency ordering constraint: for each (A, B) pair, A appears before B | sections=section_1.2 | type=behavior | expected=All dependency pairs maintain correct ordering in output | edge=False",
         "change_type": "modified",
         "id": "D_19",
         "item_id": "TP_4"
       },
       {
-        "after": "Test empty tasks and dependencies | sections=section_7 | type=behavior | expected=Returns empty list | edge=True",
-        "before": "Verify dependency ordering constraint is satisfied | sections=section_1.2 | type=behavior | expected=For every dependency pair (A, B), A appears before B in the output | edge=False",
+        "after": "Verify lexicographically largest task selected first when multiple available | sections=section_7 | type=behavior | expected=schedule_tasks(['b', 'a', 'c'], []) returns ['c', 'b', 'a'] | edge=False",
+        "before": "Test lexicographic ordering when multiple tasks are available | sections=section_1.2 | type=behavior | expected=Returns ['a', 'b', 'c'] for tasks=['b', 'a', 'c'] with empty dependencies | edge=False",
         "change_type": "modified",
         "id": "D_20",
         "item_id": "TP_5"
       },
       {
-        "after": "Test diamond-shaped dependency graph | sections=section_7 | type=behavior | expected=Returns [a, b, c, d] where a precedes b and c, and both b and c precede d | edge=False",
-        "before": "Verify deterministic output with lexicographic selection | sections=section_1.2 | type=behavior | expected=When multiple tasks are available, lexicographically smallest is selected first | edge=False",
+        "after": "Verify deterministic output across multiple invocations | sections=section_7 | type=behavior | expected=Multiple calls with same inputs produce identical output | edge=False",
+        "before": "Test deterministic output consistency across multiple calls | sections=section_1.2 | type=behavior | expected=Multiple calls with same input produce identical output | edge=False",
         "change_type": "modified",
         "id": "D_21",
         "item_id": "TP_6"
       },
       {
-        "after": "Test multiple independent dependency chains | sections=section_7 | type=behavior | expected=Returns deterministic ordering respecting all dependencies and using lexicographic ordering for available tasks | edge=False",
-        "before": "Verify diamond-shaped dependency graph handling | sections=section_14, section_15 | type=behavior | expected=Given tasks [a, b, c, d] with diamond dependencies, returns [a, b, c, d] | edge=False",
+        "after": "Verify empty tasks and dependencies returns empty list | sections=section_8 | type=behavior | expected=schedule_tasks([], []) returns [] | edge=True",
+        "before": "Test empty tasks and dependencies boundary condition | sections=section_1.4, section_12, section_13 | type=behavior | expected=Returns empty list [] | edge=True",
         "change_type": "modified",
         "id": "D_22",
         "item_id": "TP_7"
       },
       {
-        "after": "Test duplicate task names raises ValueError | sections=section_6 | type=behavior | expected=Raises ValueError with message indicating duplicate task names | edge=True",
-        "before": "Verify empty tasks and dependencies returns empty list | sections=section_1.4 | type=behavior | expected=schedule_tasks([], []) returns [] | edge=True",
+        "after": "Verify single task with no dependencies returns that task | sections=section_8 | type=behavior | expected=schedule_tasks(['task1'], []) returns ['task1'] | edge=True",
+        "before": "Test single task with no dependencies boundary condition | sections=section_1.4, section_12, section_13 | type=behavior | expected=Returns list containing the single task | edge=True",
         "change_type": "modified",
         "id": "D_23",
         "item_id": "TP_8"
       },
       {
-        "after": "Test dependency references unknown task raises ValueError | sections=section_6 | type=behavior | expected=Raises ValueError when dependency refers to task not in tasks list | edge=True",
-        "before": "Verify single task with no dependencies | sections=section_1.4 | type=behavior | expected=schedule_tasks([task], []) returns [task] | edge=True",
+        "after": "Verify multiple independent tasks return lexicographic order (largest first) | sections=section_8 | type=behavior | expected=schedule_tasks(['x', 'y', 'z'], []) returns ['z', 'y', 'x'] | edge=True",
+        "before": "Test multiple independent tasks with no dependencies | sections=section_1.4, section_12, section_13 | type=behavior | expected=Returns tasks in lexicographic order | edge=True",
         "change_type": "modified",
         "id": "D_24",
         "item_id": "TP_9"
       }
     ],
-    "modified": 20,
+    "modified": 23,
     "new_version": "task_scheduler_with_dependencies_v2",
     "old_version": "task_scheduler_with_dependencies_v1",
-    "removed": 4
+    "removed": 1
   },
   "issues": [
     {
@@ -191,13 +191,18 @@
       "check_name": "generated_tests_import_order",
       "message": "Generated tests contain imports after test functions.",
       "severity": "warning"
+    },
+    {
+      "check_name": "test_result_passed",
+      "message": "test_diamond_shaped_dependency_graph ended with status failed.",
+      "severity": "error"
     }
   ],
   "program_summary": {
     "behavior_summary": "schedule_tasks(tasks, dependencies): Computes a valid execution order for tasks with dependencies. It raises TypeError, ValueError for error cases.",
     "functions": [
       {
-        "docstring": "Computes a valid execution order for tasks with dependencies.\n\nArgs:\n    tasks: list[str] - List of unique task names\n    dependencies: list[tuple[str, str]] - Dependency pairs (before_task, after_task)\n\nReturns:\n    list[str] - A valid ordering of all tasks respecting dependencies\n\nRaises:\n    TypeError: If tasks or dependencies are not lists, or if task names are not strings,\n               or if dependencies are not pairs of strings\n    ValueError: If duplicate task names exist, if dependencies reference unknown tasks,\n                or if circular dependencies exist",
+        "docstring": "Computes a valid execution order for tasks with dependencies.\n\nArgs:\n    tasks: list[str] - List of unique task names\n    dependencies: list[tuple[str, str]] - Dependency pairs (before_task, after_task)\n\nReturns:\n    list[str] - A valid ordering of all tasks where dependencies are satisfied\n\nRaises:\n    TypeError: If tasks or dependencies are not lists, or if task names are not strings,\n               or if dependencies are not tuples of two strings\n    ValueError: If duplicate task names exist, if dependencies reference unknown tasks,\n                or if circular dependencies exist",
         "name": "schedule_tasks",
         "parameters": [
           "tasks",
@@ -217,16 +222,16 @@
     "artifact_count": 4,
     "description_stored": true,
     "generated_code_records": 1,
-    "generated_test_records": 20,
-    "test_plan_items": 20,
-    "test_results": 40,
-    "tests_failed": 0,
-    "tests_passed": 40,
+    "generated_test_records": 24,
+    "test_plan_items": 24,
+    "test_results": 24,
+    "tests_failed": 1,
+    "tests_passed": 23,
     "version": "task_scheduler_with_dependencies_v2"
   },
   "traceability": [
     {
-      "requirement": "Verify function signature matches API specification",
+      "requirement": "Verify function signature matches schedule_tasks(tasks: list[str], dependencies: list[tuple[str, str]]) -> list[str]",
       "result_statuses": [
         "passed"
       ],
@@ -235,39 +240,40 @@
         "section_3"
       ],
       "test_functions": [
-        "test_function_signature_api_specification"
+        "test_function_signature"
       ],
       "test_plan_id": "TP_1"
     },
     {
-      "requirement": "Test linear dependency chain execution order",
+      "requirement": "Verify linear dependency chain execution order",
       "result_statuses": [
         "passed"
       ],
       "source_sections": [
-        "section_3",
-        "section_5"
+        "section_4",
+        "section_5",
+        "section_6"
       ],
       "test_functions": [
-        "test_linear_dependency_chain_execution_order"
+        "test_linear_dependency_chain_example"
       ],
       "test_plan_id": "TP_2"
     },
     {
-      "requirement": "Test lexicographic ordering when no dependencies exist",
+      "requirement": "Verify every task appears exactly once in output",
       "result_statuses": [
         "passed"
       ],
       "source_sections": [
-        "section_6"
+        "section_7"
       ],
       "test_functions": [
-        "test_lexicographic_ordering_no_dependencies"
+        "test_all_tasks_appear_exactly_once"
       ],
       "test_plan_id": "TP_3"
     },
     {
-      "requirement": "Test single task with no dependencies",
+      "requirement": "Verify dependency ordering constraint is satisfied",
       "result_statuses": [
         "passed"
       ],
@@ -275,12 +281,12 @@
         "section_7"
       ],
       "test_functions": [
-        "test_single_task_no_dependencies"
+        "test_dependency_ordering_constraint"
       ],
       "test_plan_id": "TP_4"
     },
     {
-      "requirement": "Test empty tasks and dependencies",
+      "requirement": "Verify lexicographically largest task selected first when multiple available",
       "result_statuses": [
         "passed"
       ],
@@ -288,12 +294,12 @@
         "section_7"
       ],
       "test_functions": [
-        "test_empty_tasks_and_dependencies"
+        "test_lexicographic_largest_first"
       ],
       "test_plan_id": "TP_5"
     },
     {
-      "requirement": "Test diamond-shaped dependency graph",
+      "requirement": "Verify deterministic output across multiple invocations",
       "result_statuses": [
         "passed"
       ],
@@ -301,181 +307,221 @@
         "section_7"
       ],
       "test_functions": [
-        "test_diamond_shaped_dependency_graph"
+        "test_deterministic_output"
       ],
       "test_plan_id": "TP_6"
     },
     {
-      "requirement": "Test multiple independent dependency chains",
+      "requirement": "Verify empty tasks and dependencies returns empty list",
       "result_statuses": [
         "passed"
       ],
       "source_sections": [
-        "section_7"
+        "section_8"
       ],
       "test_functions": [
-        "test_multiple_independent_dependency_chains"
+        "test_empty_tasks_and_dependencies"
       ],
       "test_plan_id": "TP_7"
     },
     {
-      "requirement": "Test duplicate task names raises ValueError",
+      "requirement": "Verify single task with no dependencies returns that task",
       "result_statuses": [
         "passed"
       ],
       "source_sections": [
-        "section_6"
+        "section_8"
       ],
       "test_functions": [
-        "test_duplicate_task_names_raises_valueerror"
+        "test_single_task_no_dependencies"
       ],
       "test_plan_id": "TP_8"
     },
     {
-      "requirement": "Test dependency references unknown task raises ValueError",
+      "requirement": "Verify multiple independent tasks return lexicographic order (largest first)",
       "result_statuses": [
         "passed"
       ],
       "source_sections": [
-        "section_6"
+        "section_8"
       ],
       "test_functions": [
-        "test_dependency_references_unknown_task_raises_valueerror"
+        "test_multiple_independent_tasks_lexicographic"
       ],
       "test_plan_id": "TP_9"
     },
     {
-      "requirement": "Test circular dependency raises ValueError",
+      "requirement": "Verify long linear dependency chain maintains correct order",
       "result_statuses": [
         "passed"
       ],
       "source_sections": [
-        "section_6"
+        "section_8"
       ],
       "test_functions": [
-        "test_circular_dependency_raises_valueerror"
+        "test_long_linear_dependency_chain"
       ],
       "test_plan_id": "TP_10"
     },
     {
-      "requirement": "Test tasks parameter is not a list raises TypeError",
+      "requirement": "Verify multiple independent chains with deterministic ordering",
       "result_statuses": [
         "passed"
       ],
       "source_sections": [
-        "section_6"
+        "section_8"
       ],
       "test_functions": [
-        "test_tasks_parameter_not_list_raises_typeerror"
+        "test_multiple_independent_chains"
       ],
       "test_plan_id": "TP_11"
     },
     {
-      "requirement": "Test dependencies parameter is not a list raises TypeError",
+      "requirement": "Verify diamond-shaped dependency graph resolves correctly",
       "result_statuses": [
-        "passed"
+        "failed"
       ],
       "source_sections": [
-        "section_6"
+        "section_8",
+        "section_9"
       ],
       "test_functions": [
-        "test_dependencies_parameter_not_list_raises_typeerror"
+        "test_diamond_shaped_dependency_graph"
       ],
       "test_plan_id": "TP_12"
     },
     {
-      "requirement": "Test task name is not a string raises TypeError",
+      "requirement": "Verify ValueError raised for duplicate task names",
       "result_statuses": [
         "passed"
       ],
       "source_sections": [
-        "section_6"
+        "section_7"
       ],
       "test_functions": [
-        "test_task_name_not_string_raises_typeerror"
+        "test_duplicate_task_names_raises_error"
       ],
       "test_plan_id": "TP_13"
     },
     {
-      "requirement": "Test dependency pair is not a tuple of strings raises TypeError",
+      "requirement": "Verify ValueError raised for dependency referencing unknown task",
       "result_statuses": [
         "passed"
       ],
       "source_sections": [
-        "section_6"
+        "section_7"
       ],
       "test_functions": [
-        "test_dependency_pair_not_tuple_of_strings_raises_typeerror"
+        "test_unknown_task_in_dependency_raises_error"
       ],
       "test_plan_id": "TP_14"
     },
     {
-      "requirement": "Test case sensitivity of task names",
+      "requirement": "Verify ValueError raised for circular dependency",
       "result_statuses": [
         "passed"
       ],
       "source_sections": [
-        "section_2"
+        "section_7"
       ],
       "test_functions": [
-        "test_case_sensitivity_of_task_names"
+        "test_circular_dependency_raises_error"
       ],
       "test_plan_id": "TP_15"
     },
     {
-      "requirement": "Test function does not execute tasks or modify external state",
+      "requirement": "Verify TypeError raised when tasks is not a list",
       "result_statuses": [
         "passed"
       ],
       "source_sections": [
-        "section_2"
+        "section_7"
       ],
       "test_functions": [
-        "test_function_does_not_execute_tasks_or_modify_state"
+        "test_tasks_not_list_raises_error"
       ],
       "test_plan_id": "TP_16"
     },
     {
-      "requirement": "Test every task appears exactly once in output",
+      "requirement": "Verify TypeError raised when dependencies is not a list",
       "result_statuses": [
         "passed"
       ],
       "source_sections": [
-        "section_6"
+        "section_7"
       ],
       "test_functions": [
-        "test_every_task_appears_exactly_once_in_output"
+        "test_dependencies_not_list_raises_error"
       ],
       "test_plan_id": "TP_17"
     },
     {
-      "requirement": "Test deterministic output on repeated calls",
+      "requirement": "Verify TypeError raised when task name is not a string",
       "result_statuses": [
         "passed"
       ],
       "source_sections": [
-        "section_6"
+        "section_7"
       ],
       "test_functions": [
-        "test_deterministic_output_on_repeated_calls"
+        "test_task_name_not_string_raises_error"
       ],
       "test_plan_id": "TP_18"
     },
     {
-      "requirement": "Test long dependency chain with many tasks",
+      "requirement": "Verify TypeError raised when dependency is not a pair of strings",
       "result_statuses": [
         "passed"
       ],
       "source_sections": [
-        "section_7"
+        "section_8"
       ],
       "test_functions": [
-        "test_long_dependency_chain_with_many_tasks"
+        "test_dependency_not_pair_of_strings_raises_error"
       ],
       "test_plan_id": "TP_19"
     },
     {
-      "requirement": "Test complex graph with multiple paths and convergence points",
+      "requirement": "Verify task names are case-sensitive",
+      "result_statuses": [
+        "passed"
+      ],
+      "source_sections": [
+        "section_1.5"
+      ],
+      "test_functions": [
+        "test_case_sensitive_task_names"
+      ],
+      "test_plan_id": "TP_20"
+    },
+    {
+      "requirement": "Verify function returns ordering only without executing tasks",
+      "result_statuses": [
+        "passed"
+      ],
+      "source_sections": [
+        "section_1.5"
+      ],
+      "test_functions": [
+        "test_function_returns_ordering_only"
+      ],
+      "test_plan_id": "TP_21"
+    },
+    {
+      "requirement": "Verify performance with large task count",
+      "result_statuses": [
+        "passed"
+      ],
+      "source_sections": [
+        "section_1.5"
+      ],
+      "test_functions": [
+        "test_performance_large_task_count"
+      ],
+      "test_plan_id": "TP_22"
+    },
+    {
+      "requirement": "Verify self-referential dependency raises error",
       "result_statuses": [
         "passed"
       ],
@@ -483,9 +529,23 @@
         "section_7"
       ],
       "test_functions": [
-        "test_complex_graph_with_multiple_paths_and_convergence"
+        "test_self_referential_dependency_raises_error"
       ],
-      "test_plan_id": "TP_20"
+      "test_plan_id": "TP_23"
+    },
+    {
+      "requirement": "Verify complex diamond with multiple convergence points",
+      "result_statuses": [
+        "passed"
+      ],
+      "source_sections": [
+        "section_8",
+        "section_9"
+      ],
+      "test_functions": [
+        "test_complex_diamond_multiple_convergence"
+      ],
+      "test_plan_id": "TP_24"
     }
   ],
   "version": "task_scheduler_with_dependencies_v2"

@@ -10,10 +10,8 @@ def schedule_tasks(tasks, dependencies):
         list[str] - A valid ordering of all tasks respecting dependencies
     
     Raises:
-        TypeError: If tasks or dependencies are not lists, or if task names or
-                   dependency pairs are not properly typed
-        ValueError: If duplicate tasks exist, unknown tasks in dependencies,
-                    or circular dependencies exist
+        TypeError: If tasks or dependencies are not lists, or contain invalid types
+        ValueError: If duplicate tasks, unknown tasks in dependencies, or circular dependencies exist
     """
     # Type validation
     if not isinstance(tasks, list):
@@ -26,69 +24,61 @@ def schedule_tasks(tasks, dependencies):
         if not isinstance(task, str):
             raise TypeError("Task name must be a string")
     
-    # Validate dependencies are tuples of strings
-    for dep in dependencies:
-        if not isinstance(dep, tuple) or len(dep) != 2:
-            raise TypeError("Dependency must be a tuple of two elements")
-        if not isinstance(dep[0], str) or not isinstance(dep[1], str):
-            raise TypeError("Dependency must be a pair of strings")
-    
-    # Check for duplicate task names
+    # Check for duplicate tasks
     if len(tasks) != len(set(tasks)):
         raise ValueError("Duplicate task names found")
+    
+    # Validate dependencies format
+    for dep in dependencies:
+        if not isinstance(dep, tuple) or len(dep) != 2:
+            raise TypeError("Dependency must be a pair of strings")
+        if not isinstance(dep[0], str) or not isinstance(dep[1], str):
+            raise TypeError("Dependency must be a pair of strings")
     
     # Handle empty case
     if not tasks:
         return []
     
+    # Create task set for validation
     task_set = set(tasks)
     
     # Validate all dependencies reference known tasks
-    for before, after in dependencies:
-        if before not in task_set:
-            raise ValueError(f"Unknown task in dependency: {before}")
-        if after not in task_set:
-            raise ValueError(f"Unknown task in dependency: {after}")
-    
-    # Check for self-referential dependencies
-    for before, after in dependencies:
-        if before == after:
-            raise ValueError(f"Task cannot depend on itself: {before}")
+    for before_task, after_task in dependencies:
+        if before_task not in task_set:
+            raise ValueError(f"Dependency refers to unknown task: {before_task}")
+        if after_task not in task_set:
+            raise ValueError(f"Dependency refers to unknown task: {after_task}")
     
     # Build adjacency list and in-degree count
     graph = {task: [] for task in tasks}
     in_degree = {task: 0 for task in tasks}
     
-    # Process dependencies (avoid duplicates by using set)
-    seen_deps = set()
-    for before, after in dependencies:
-        if (before, after) not in seen_deps:
-            graph[before].append(after)
-            in_degree[after] += 1
-            seen_deps.add((before, after))
+    for before_task, after_task in dependencies:
+        if before_task == after_task:
+            raise ValueError(f"Circular dependency exists: task cannot depend on itself")
+        graph[before_task].append(after_task)
+        in_degree[after_task] += 1
     
     # Kahn's algorithm with lexicographic ordering
-    queue = sorted([task for task in tasks if in_degree[task] == 0])
+    # Start with tasks that have no dependencies
+    available = sorted([task for task in tasks if in_degree[task] == 0])
     result = []
     
-    while queue:
-        # Always pick lexicographically smallest available task
-        current = queue.pop(0)
+    while available:
+        # Pick lexicographically smallest available task
+        current = available.pop(0)
         result.append(current)
         
-        # Process neighbors
-        neighbors = []
-        for neighbor in graph[current]:
-            in_degree[neighbor] -= 1
-            if in_degree[neighbor] == 0:
-                neighbors.append(neighbor)
-        
-        # Add new available tasks in sorted order
-        queue.extend(neighbors)
-        queue.sort()
+        # Process all tasks that depend on current
+        for dependent in sorted(graph[current]):
+            in_degree[dependent] -= 1
+            if in_degree[dependent] == 0:
+                # Insert in sorted position to maintain lexicographic order
+                available.append(dependent)
+                available.sort()
     
-    # Check for cycles
+    # Check for cycles: if we didn't process all tasks, there's a cycle
     if len(result) != len(tasks):
-        raise ValueError("Circular dependency detected")
+        raise ValueError("Circular dependency exists")
     
     return result
