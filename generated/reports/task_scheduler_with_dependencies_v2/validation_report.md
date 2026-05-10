@@ -10,8 +10,8 @@
 | `artifact_count` | 5 |
 | `generated_code_records` | 1 |
 | `generated_test_records` | 20 |
-| `test_results` | 20 |
-| `tests_passed` | 20 |
+| `test_results` | 40 |
+| `tests_passed` | 40 |
 | `tests_failed` | 0 |
 
 ## Generated Program Summary

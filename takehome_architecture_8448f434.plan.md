@@ -51,7 +51,7 @@ The provided sample input [`/Users/anpandoh/Downloads/Problem_Description_Softwa
 
 ## Core Design
 
-- Use Python modules in [`src/swgen_test_automation`](file:///Users/anpandoh/software_gen_testing_automation/src/swgen_test_automation):
+- Use Python modules in [`src/module_generator`](file:///Users/anpandoh/software_gen_testing_automation/src/module_generator):
   - `config.py`: load YAML/TOML/env-backed settings for provider, model, API key reference, temperature, DB path, and generation toggles.
   - `pdf_reader.py`: extract text from arbitrary PDFs using `pypdf` and normalize page/section text.
   - `section_parser.py`: identify numbered sections/headings and produce stable section IDs for traceability.

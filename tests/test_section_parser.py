@@ -1,4 +1,4 @@
-from swgen_test_automation.ingestion import StyledTextLine, parse_sections
+from module_generator.ingestion import StyledTextLine, parse_sections
 
 
 def test_parse_sections_extracts_numbered_sections() -> None:

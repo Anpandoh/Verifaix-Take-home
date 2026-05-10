@@ -2,9 +2,9 @@ from pathlib import Path
 
 import pytest
 
-from swgen_test_automation import schemas
-from swgen_test_automation import pipeline
-from swgen_test_automation.ingestion import StyledTextLine
+from module_generator import schemas
+from module_generator import pipeline
+from module_generator.ingestion import StyledTextLine
 
 
 SAMPLE_TEXT = """Problem Description: Task Scheduler with Dependencies

@@ -3,10 +3,10 @@ from pathlib import Path
 import pytest
 from fastapi.testclient import TestClient
 
-from swgen_test_automation import api
-from swgen_test_automation import pipeline
-from swgen_test_automation import schemas
-from swgen_test_automation.db import Repository
+from module_generator import api
+from module_generator import pipeline
+from module_generator import schemas
+from module_generator.db import Repository
 
 
 def seeded_repo(tmp_path: Path) -> Repository:

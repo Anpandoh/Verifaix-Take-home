@@ -1,7 +1,7 @@
 [
   {
-    "created_at": "2026-05-10 23:45:49.044212",
-    "duration_seconds": 0.6435389160178602,
+    "created_at": "2026-05-10 23:56:52.717532",
+    "duration_seconds": 0.4861640410963446,
     "failure_message": null,
     "status": "passed",
     "test_name": "test_linear_dependency_chain",
@@ -11,8 +11,8 @@
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:45:49.681849",
-    "duration_seconds": 0.6375464999582618,
+    "created_at": "2026-05-10 23:56:53.177418",
+    "duration_seconds": 0.4598050839267671,
     "failure_message": null,
     "status": "passed",
     "test_name": "test_lexicographic_ordering_no_dependencies",
@@ -22,8 +22,8 @@
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:45:50.165249",
-    "duration_seconds": 0.4832782498560846,
+    "created_at": "2026-05-10 23:56:53.644581",
+    "duration_seconds": 0.46704008313827217,
     "failure_message": null,
     "status": "passed",
     "test_name": "test_all_tasks_appear_exactly_once",
@@ -33,8 +33,8 @@
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:45:50.632013",
-    "duration_seconds": 0.4666707089636475,
+    "created_at": "2026-05-10 23:56:54.114606",
+    "duration_seconds": 0.4699227090459317,
     "failure_message": null,
     "status": "passed",
     "test_name": "test_dependency_ordering_constraint",
@@ -44,8 +44,8 @@
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:45:51.098608",
-    "duration_seconds": 0.4664847501553595,
+    "created_at": "2026-05-10 23:56:54.583383",
+    "duration_seconds": 0.4686838751658797,
     "failure_message": null,
     "status": "passed",
     "test_name": "test_deterministic_output",
@@ -55,8 +55,8 @@
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:45:51.681775",
-    "duration_seconds": 0.5830827918834984,
+    "created_at": "2026-05-10 23:56:55.040573",
+    "duration_seconds": 0.45710145798511803,
     "failure_message": null,
     "status": "passed",
     "test_name": "test_diamond_dependency_graph",
@@ -66,8 +66,8 @@
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:45:52.169643",
-    "duration_seconds": 0.487765499856323,
+    "created_at": "2026-05-10 23:56:55.559178",
+    "duration_seconds": 0.518507624976337,
     "failure_message": null,
     "status": "passed",
     "test_name": "test_multiple_independent_chains",
@@ -77,8 +77,8 @@
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:45:52.831461",
-    "duration_seconds": 0.6615819169674069,
+    "created_at": "2026-05-10 23:56:56.084231",
+    "duration_seconds": 0.5249448341783136,
     "failure_message": null,
     "status": "passed",
     "test_name": "test_empty_input",
@@ -88,8 +88,8 @@
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:45:53.328927",
-    "duration_seconds": 0.4973071659915149,
+    "created_at": "2026-05-10 23:56:56.590863",
+    "duration_seconds": 0.5065386251080781,
     "failure_message": null,
     "status": "passed",
     "test_name": "test_single_task_no_dependencies",
@@ -99,8 +99,8 @@
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:45:53.843286",
-    "duration_seconds": 0.5142676669638604,
+    "created_at": "2026-05-10 23:56:57.071928",
+    "duration_seconds": 0.48097054194658995,
     "failure_message": null,
     "status": "passed",
     "test_name": "test_long_dependency_chain",
@@ -110,8 +110,8 @@
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:45:54.321488",
-    "duration_seconds": 0.4780801248271018,
+    "created_at": "2026-05-10 23:56:57.522847",
+    "duration_seconds": 0.45083241700194776,
     "failure_message": null,
     "status": "passed",
     "test_name": "test_duplicate_task_names_raises_valueerror",
@@ -121,8 +121,8 @@
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:45:54.810579",
-    "duration_seconds": 0.4890008750371635,
+    "created_at": "2026-05-10 23:56:58.050100",
+    "duration_seconds": 0.5271313330158591,
     "failure_message": null,
     "status": "passed",
     "test_name": "test_unknown_task_in_dependency_raises_valueerror",
@@ -132,8 +132,8 @@
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:45:55.291724",
-    "duration_seconds": 0.48105837497860193,
+    "created_at": "2026-05-10 23:56:58.531865",
+    "duration_seconds": 0.48167229210957885,
     "failure_message": null,
     "status": "passed",
     "test_name": "test_circular_dependency_raises_valueerror",
@@ -143,8 +143,8 @@
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:45:55.759652",
-    "duration_seconds": 0.46783974999561906,
+    "created_at": "2026-05-10 23:56:59.016020",
+    "duration_seconds": 0.4840219591278583,
     "failure_message": null,
     "status": "passed",
     "test_name": "test_tasks_not_list_raises_typeerror",
@@ -154,8 +154,8 @@
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:45:56.230233",
-    "duration_seconds": 0.4704942919779569,
+    "created_at": "2026-05-10 23:56:59.455000",
+    "duration_seconds": 0.4388870829716325,
     "failure_message": null,
     "status": "passed",
     "test_name": "test_dependencies_not_list_raises_typeerror",
@@ -165,8 +165,8 @@
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:45:56.700726",
-    "duration_seconds": 0.4704121248796582,
+    "created_at": "2026-05-10 23:56:59.872490",
+    "duration_seconds": 0.4174074169714004,
     "failure_message": null,
     "status": "passed",
     "test_name": "test_task_name_not_string_raises_typeerror",
@@ -176,8 +176,8 @@
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:45:57.159756",
-    "duration_seconds": 0.4589194159489125,
+    "created_at": "2026-05-10 23:57:00.360622",
+    "duration_seconds": 0.48801783309318125,
     "failure_message": null,
     "status": "passed",
     "test_name": "test_dependency_not_pair_of_strings_raises_typeerror",
@@ -187,8 +187,8 @@
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:45:57.605350",
-    "duration_seconds": 0.44549016607925296,
+    "created_at": "2026-05-10 23:57:00.853373",
+    "duration_seconds": 0.4926567920483649,
     "failure_message": null,
     "status": "passed",
     "test_name": "test_case_sensitive_task_names",
@@ -198,8 +198,8 @@
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:45:58.079606",
-    "duration_seconds": 0.4741610838100314,
+    "created_at": "2026-05-10 23:57:01.581945",
+    "duration_seconds": 0.7284432081505656,
     "failure_message": null,
     "status": "passed",
     "test_name": "test_no_side_effects",
@@ -209,8 +209,8 @@
     "version": "task_scheduler_with_dependencies_v2"
   },
   {
-    "created_at": "2026-05-10 23:45:58.567930",
-    "duration_seconds": 0.4882339171599597,
+    "created_at": "2026-05-10 23:57:02.146144",
+    "duration_seconds": 0.5640988750383258,
     "failure_message": null,
     "status": "passed",
     "test_name": "test_self_referential_dependency_raises_valueerror",

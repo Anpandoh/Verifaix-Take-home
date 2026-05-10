@@ -14,87 +14,6 @@
       "test_type": "behavior"
     },
     {
-      "description": "Verify lexicographic ordering when no dependencies exist",
-      "edge_case": false,
-      "expected_behavior": "Given tasks [b, a, c] with empty dependencies, function returns [c, b, a] (lexicographically largest first)",
-      "id": "TP_2",
-      "source_sections": [
-        "section_1.2"
-      ],
-      "test_type": "behavior"
-    },
-    {
-      "description": "Verify every task appears exactly once in output",
-      "edge_case": false,
-      "expected_behavior": "Output list contains all input tasks with no duplicates and length equals input task count",
-      "id": "TP_3",
-      "source_sections": [
-        "section_1.2"
-      ],
-      "test_type": "behavior"
-    },
-    {
-      "description": "Verify dependency ordering constraint is satisfied",
-      "edge_case": false,
-      "expected_behavior": "For every dependency pair (A, B), A appears at an earlier index than B in the output",
-      "id": "TP_4",
-      "source_sections": [
-        "section_1.2"
-      ],
-      "test_type": "behavior"
-    },
-    {
-      "description": "Verify deterministic output on multiple valid orderings",
-      "edge_case": false,
-      "expected_behavior": "Multiple calls with same inputs return identical ordering; lexicographic selection ensures determinism",
-      "id": "TP_5",
-      "source_sections": [
-        "section_1.2"
-      ],
-      "test_type": "behavior"
-    },
-    {
-      "description": "Verify diamond-shaped dependency graph handling",
-      "edge_case": false,
-      "expected_behavior": "Given tasks [a, b, c, d] with diamond dependencies, function returns valid ordering where a precedes b and c, and both b and c precede d",
-      "id": "TP_6",
-      "source_sections": [
-        "section_8",
-        "section_9"
-      ],
-      "test_type": "behavior"
-    },
-    {
-      "description": "Verify multiple independent dependency chains",
-      "edge_case": false,
-      "expected_behavior": "Independent chains are ordered deterministically via lexicographic availability; all dependencies within chains are respected",
-      "id": "TP_7",
-      "source_sections": [
-        "section_8"
-      ],
-      "test_type": "behavior"
-    },
-    {
-      "description": "Verify empty input returns empty list",
-      "edge_case": true,
-      "expected_behavior": "Given empty tasks list and empty dependencies, function returns []",
-      "id": "TP_8",
-      "source_sections": [
-        "section_8"
-      ],
-      "test_type": "behavior"
-    },
-    {
-      "description": "Verify single task with no dependencies",
-      "edge_case": true,
-      "expected_behavior": "Given single task and no dependencies, function returns list containing that task",
-      "id": "TP_9",
-      "source_sections": [
-        "section_8"
-      ],
-      "test_type": "behavior"
-    },
-    {
       "description": "Verify long dependency chain execution",
       "edge_case": true,
       "expected_behavior": "Long linear chain of dependencies is correctly ordered respecting all constraints",
@@ -195,6 +114,16 @@
       "test_type": "behavior"
     },
     {
+      "description": "Verify lexicographic ordering when no dependencies exist",
+      "edge_case": false,
+      "expected_behavior": "Given tasks [b, a, c] with empty dependencies, function returns [c, b, a] (lexicographically largest first)",
+      "id": "TP_2",
+      "source_sections": [
+        "section_1.2"
+      ],
+      "test_type": "behavior"
+    },
+    {
       "description": "Verify self-referential dependency is rejected",
       "edge_case": true,
       "expected_behavior": "Function raises ValueError when a task has a dependency on itself (A\u2192A)",
@@ -203,6 +132,77 @@
         "section_7"
       ],
       "test_type": "error"
+    },
+    {
+      "description": "Verify every task appears exactly once in output",
+      "edge_case": false,
+      "expected_behavior": "Output list contains all input tasks with no duplicates and length equals input task count",
+      "id": "TP_3",
+      "source_sections": [
+        "section_1.2"
+      ],
+      "test_type": "behavior"
+    },
+    {
+      "description": "Verify dependency ordering constraint is satisfied",
+      "edge_case": false,
+      "expected_behavior": "For every dependency pair (A, B), A appears at an earlier index than B in the output",
+      "id": "TP_4",
+      "source_sections": [
+        "section_1.2"
+      ],
+      "test_type": "behavior"
+    },
+    {
+      "description": "Verify deterministic output on multiple valid orderings",
+      "edge_case": false,
+      "expected_behavior": "Multiple calls with same inputs return identical ordering; lexicographic selection ensures determinism",
+      "id": "TP_5",
+      "source_sections": [
+        "section_1.2"
+      ],
+      "test_type": "behavior"
+    },
+    {
+      "description": "Verify diamond-shaped dependency graph handling",
+      "edge_case": false,
+      "expected_behavior": "Given tasks [a, b, c, d] with diamond dependencies, function returns valid ordering where a precedes b and c, and both b and c precede d",
+      "id": "TP_6",
+      "source_sections": [
+        "section_8",
+        "section_9"
+      ],
+      "test_type": "behavior"
+    },
+    {
+      "description": "Verify multiple independent dependency chains",
+      "edge_case": false,
+      "expected_behavior": "Independent chains are ordered deterministically via lexicographic availability; all dependencies within chains are respected",
+      "id": "TP_7",
+      "source_sections": [
+        "section_8"
+      ],
+      "test_type": "behavior"
+    },
+    {
+      "description": "Verify empty input returns empty list",
+      "edge_case": true,
+      "expected_behavior": "Given empty tasks list and empty dependencies, function returns []",
+      "id": "TP_8",
+      "source_sections": [
+        "section_8"
+      ],
+      "test_type": "behavior"
+    },
+    {
+      "description": "Verify single task with no dependencies",
+      "edge_case": true,
+      "expected_behavior": "Given single task and no dependencies, function returns list containing that task",
+      "id": "TP_9",
+      "source_sections": [
+        "section_8"
+      ],
+      "test_type": "behavior"
     }
   ],
   "summary": "The schedule_tasks(tasks: list[str], dependencies: list[tuple[str, str]]) function computes a valid topological ordering of tasks respecting all dependency constraints. Core success behavior: every task appears exactly once, all dependency pairs (A, B) have A before B, and when multiple tasks are available, lexicographically largest is selected first for deterministic output. Main error cases: ValueError for duplicate tasks, unknown task references, or circular dependencies; TypeError for non-list inputs or non-string task names.",

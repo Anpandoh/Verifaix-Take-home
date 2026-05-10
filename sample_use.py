@@ -3,9 +3,9 @@ from __future__ import annotations
 from pathlib import Path
 from textwrap import shorten
 
-from swgen_test_automation.config import load_settings
-from swgen_test_automation.db import Repository
-from swgen_test_automation.pipeline import (
+from module_generator.config import load_settings
+from module_generator.db import Repository
+from module_generator.pipeline import (
     export_report,
     generate,
     init_database,

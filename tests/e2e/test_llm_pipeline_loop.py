@@ -5,9 +5,9 @@ from pathlib import Path
 
 import pytest
 
-from swgen_test_automation.constants import DEFAULT_SAMPLE_PDF
-from swgen_test_automation.db import Repository
-from swgen_test_automation import pipeline
+from module_generator.constants import DEFAULT_SAMPLE_PDF
+from module_generator.db import Repository
+from module_generator import pipeline
 
 DEFAULT_E2E_OPENAI_MODEL = "gpt-4.1-mini"
 DEFAULT_E2E_ANTHROPIC_MODEL = "claude-haiku-4-5-20251001"

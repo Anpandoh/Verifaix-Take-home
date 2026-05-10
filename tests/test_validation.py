@@ -1,9 +1,9 @@
 from pathlib import Path
 
-from swgen_test_automation import schemas
-from swgen_test_automation.db import Repository
-from swgen_test_automation.utils import write_text
-from swgen_test_automation.validation import render_validation_markdown, validate_version
+from module_generator import schemas
+from module_generator.db import Repository
+from module_generator.utils import write_text
+from module_generator.validation import render_validation_markdown, validate_version
 
 
 def test_validate_version_builds_summary_traceability(tmp_path: Path) -> None:

@@ -37,7 +37,7 @@ The script imports the Python package directly, loads `config.toml` and `.env`, 
 Start the FastAPI app:
 
 ```bash
-uvicorn swgen_test_automation.api:app
+uvicorn module_generator.api:app
 ```
 
 Then inspect OpenAPI docs at `http://127.0.0.1:8000/docs` or the raw spec at `/openapi.json`.

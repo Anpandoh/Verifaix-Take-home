@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from swgen_test_automation.config import load_settings
+from module_generator.config import load_settings
 
 
 def test_missing_config_defaults_to_no_llm_provider(tmp_path: Path) -> None:

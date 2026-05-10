@@ -1,5 +1,5 @@
-from swgen_test_automation.delta import compare_test_plans
-from swgen_test_automation import schemas
+from module_generator.delta import compare_test_plans
+from module_generator import schemas
 
 
 def _item(item_id: str, description: str) -> schemas.TestPlanItem:

@@ -1,9 +1,9 @@
 import pytest
 from pydantic import BaseModel
 
-from swgen_test_automation.config import LLMSettings
-from swgen_test_automation.llm import LLMClient
-from swgen_test_automation.llm.prompts import DEFAULT_SYSTEM_PROMPT
+from module_generator.config import LLMSettings
+from module_generator.llm import LLMClient
+from module_generator.llm.prompts import DEFAULT_SYSTEM_PROMPT
 
 
 class SampleOutput(BaseModel):
